@@ -1,0 +1,15 @@
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:p="http://primefaces.org/ui">
+    <p:sidebar widgetVar="sb">
+        <h1>Sidebar</h1>
+        <p:commandLink styleClass="pi pi-user" style="width: 100%; color: black;" value="Perfil"/>
+        <p:commandLink styleClass="pi pi-list" style="width: 100%; color: black;" value="Imóveis"/>
+        <p:separator/>
+        <p:commandLink styleClass="pi pi-home" style="width: 100%; color: black;" value="Home"/>
+        <p:commandLink styleClass="pi pi-info" style="width: 100%; color: black;" value="Sobre"/>
+        <p:commandLink styleClass="pi pi-sign-out" style="width: 100%; color: black;" value="Logout"/>
+    </p:sidebar>
+    <div style="width: 100%; margin: 0px; background-color: black">
+        <p:commandLink style="font-size: 2.5em !important;" styleClass="pi pi-bars" value="" onclick="PF('sb').show()" />
+
+    </div>
+</ui:composition>
