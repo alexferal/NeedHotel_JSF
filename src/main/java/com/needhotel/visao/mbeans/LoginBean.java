@@ -1,4 +1,4 @@
-package com.needhotel;
+package com.needhotel.visao.mbeans;
 
 
 import com.needhotel.modelo.dao.implementacao.UsuarioDaoImpl;

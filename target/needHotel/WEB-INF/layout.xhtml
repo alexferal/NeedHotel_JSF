@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<f:view>
+    <ui:insert name="titulo">
+        <h1>Titulo</h1>
+    </ui:insert>
+
+    <ui:insert name="menu">
+    <ul>
+        <li>Menu 1</li>
+        <li>Menu 2</li>
+        <li>Menu 3</li>
+    </ul>
+    </ui:insert>
+
+    <main>
+        <ui:insert name="principal"></ui:insert>
+    </main>
+
+    <ui:insert name="rodape">
+        <h3>Rodapé</h3>
+    </ui:insert>
+</f:view>
+</html>

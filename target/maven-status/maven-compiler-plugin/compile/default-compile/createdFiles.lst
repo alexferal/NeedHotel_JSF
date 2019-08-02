@@ -1,0 +1,8 @@
+com/needhotel/modelo/dao/implementacao/UsuarioDaoImpl.class
+com/needhotel/modelo/dao/interfaces/ImovelDao.class
+com/needhotel/modelo/domain/Imovel.class
+com/needhotel/LoginBean.class
+com/needhotel/modelo/conexao/ConnectionFactory.class
+com/needhotel/modelo/dao/implementacao/ImovelDaoImpl.class
+com/needhotel/modelo/domain/Usuario.class
+com/needhotel/modelo/dao/interfaces/UsuarioDAO.class

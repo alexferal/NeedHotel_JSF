@@ -1,0 +1,8 @@
+/Users/diegopessoa/Projects/ifpb/projetos-pweb1/NeedHotel_JSF/src/main/java/com/needhotel/modelo/dao/interfaces/ImovelDao.java
+/Users/diegopessoa/Projects/ifpb/projetos-pweb1/NeedHotel_JSF/src/main/java/com/needhotel/modelo/conexao/ConnectionFactory.java
+/Users/diegopessoa/Projects/ifpb/projetos-pweb1/NeedHotel_JSF/src/main/java/com/needhotel/modelo/domain/Usuario.java
+/Users/diegopessoa/Projects/ifpb/projetos-pweb1/NeedHotel_JSF/src/main/java/com/needhotel/modelo/dao/implementacao/UsuarioDaoImpl.java
+/Users/diegopessoa/Projects/ifpb/projetos-pweb1/NeedHotel_JSF/src/main/java/com/needhotel/modelo/dao/implementacao/ImovelDaoImpl.java
+/Users/diegopessoa/Projects/ifpb/projetos-pweb1/NeedHotel_JSF/src/main/java/com/needhotel/LoginBean.java
+/Users/diegopessoa/Projects/ifpb/projetos-pweb1/NeedHotel_JSF/src/main/java/com/needhotel/modelo/domain/Imovel.java
+/Users/diegopessoa/Projects/ifpb/projetos-pweb1/NeedHotel_JSF/src/main/java/com/needhotel/modelo/dao/interfaces/UsuarioDAO.java
