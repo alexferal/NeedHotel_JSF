@@ -1,57 +1,37 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://java.sun.com/jsf/html"
-      xmlns:f="http://java.sun.com/jsf/core"
-      xmlns:ui="http://java.sun.com/jsf/facelets"
-      xmlns:p="http://primefaces.org/ui">
-
-<f:view contentType="text/html">
-    <h:head>
-        <f:facet name="first">
-            <meta content='text/html; charset=UTF-8'
-                  http-equiv="Content-Type"/>
-            <title>Need Hotel</title>
-        </f:facet>
-    </h:head>
-
-    <h:body style="margin: 0px !important;">
-        <div style="width: 100%;">
-
-            <div id="logo"  style="width: 100%;">
-                <ui:insert>
-                    <ui:include src="../WEB-INF/logo.xhtml"></ui:include>
-                </ui:insert>
-            </div>
-
-            <div id="principal">
-                <div style="width: 400px; position: relative; margin: auto; text-align: center; border: 1px solid black;
-            padding: 15px; border-radius: 10px;">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:f="http://xmlns.jcp.org/jsf/core"
+                xmlns:p="http://primefaces.org/ui"
+                template="../WEB-INF/layout.xhtml">
+    <ui:define name="menu"></ui:define>
+    <ui:define name="principal">
+        <div class="container center row">
+            <div class="col s6 offset-s3 white" style="margin-top: 10%; padding: 15px; border-radius: 15px">
+                <h:form id="formCadastro">
                     <h3>Login</h3>
-                    <h:form style="">
-                        <div style="width: 100%; margin: 10px;">
-                            <p:outputLabel for="email" value="Email: " icon="pi pi-user" />
-                            <p:inputText id="email" size="35" value="#{loginBean.email}"/>
-                        </div>
-                        <div style="width: 100%; margin: 10px;">
-                            <p:outputLabel for="senha" value="Senha: " icon="pi pi-key" />
-                            <p:inputText id="senha" value="#{loginBean.senha}" size="35"/>
-                        </div>
-                        <h:commandButton type="button" action="#{loginBean.login}" icon="pi pi-sign-up"/>
-                    </h:form>
-                </div>
-            </div>
+                    <div class="form-group">
+                        <h:outputLabel value="E-mail:"></h:outputLabel>
+                        <p:inputText id="email" required="true"  value=""
+                                     requiredMessage="Email obrigatório"
+                                     styleClass="form-control form-control-user">
+                        </p:inputText>
+                        <p:message for="email" />
+                    </div>
+                    <div class="form-group">
+                        <h:outputLabel value="Senha:"></h:outputLabel>
+                        <p:password id="senhaC" required="true" value=""
+                                    requiredMessage="Senha obrigatória"
+                                    styleClass="form-control form-control-user" />
+                        <p:message for="senhaC" />
+                    </div>
+                    <p:commandButton styleClass="btn" update="formCadastro"
+                                     action="#{loginBean.login}" value="Entrar" ajax="false">
+                        <f:attribute name="tipoForm" value="cadastro">Cadastrar</f:attribute>
+                    </p:commandButton>
 
-            <div id="footer" style="margin: 0px;">
-                <ui:insert>
-                    <ui:include src="../WEB-INF/rodape.xhtml"></ui:include>
-                </ui:insert>
+                </h:form>
             </div>
-
         </div>
-    </h:body>
-
-</f:view>
-
-</html>
+    </ui:define>
+</ui:composition>
