@@ -16,14 +16,14 @@
                 <h:form style="">
                     <div style="width: 100%; margin: 10px;">
                         <p:outputLabel for="email" value="Email: " icon="pi pi-user" />
-                        <p:inputText id="email" value="" size="35"/>
+                        <p:inputText id="email" size="35" value="#{loginBean.email}"/>
                     </div>
                     <div style="width: 100%; margin: 10px;">
                         <p:outputLabel for="senha" value="Senha: " icon="pi pi-key" />
-                        <p:inputText id="senha" value="" size="35"/>
+                        <p:inputText id="senha" value="#{loginBean.senha}" size="35"/>
                     </div>
-                    <p:commandButton type="button" action="#{loginBean.login}" value="Entrar" icon="pi pi-sign-up"/>
-                </h:form>
+                    <h:commandButton type="button" action="#{loginBean.login}"icon="pi pi-sign-up"/>
+                </h:form> value="Entrar"
             </div>
         </div>
 
