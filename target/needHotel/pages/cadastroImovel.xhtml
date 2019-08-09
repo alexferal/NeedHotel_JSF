@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+<f:view>
+    <h:head>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport"
+              content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Need Hotel</title>
+        <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/icon?family=Material+Icons"/>
+        <h:outputStylesheet name="css/materialize.min.css"></h:outputStylesheet>
+    </h:head>
+
+    <h:body styleClass="blue-grey darken-1">
+        <div Class="container white" style="border-radius: 15px; margin-top: 15px; margin-bottom: 15px; padding: 15px;">
+            <h3>Cadastro</h3>
+            <h6>Dados Pessoais</h6>
+            <div class="row">
+                <h:form styleClass="col s12">
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <h:outputLabel value="Nome do Imóvel" for="nome"></h:outputLabel>
+                            <p:inputText id="nome" placeholder="Ex.: ED. Rozana Soares" required="true" requiredMessage="Nome Obrigatório"></p:inputText>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <h:outputLabel value="Rua do Imóvel" for="rua"></h:outputLabel>
+                            <p:inputText id="rua" placeholder="Ex.: rua Santa Cecilia" required="true" requiredMessage="Rua Obrigatória"></p:inputText>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s6">
+                            <h:outputLabel value="Número" for="numero"></h:outputLabel>
+                            <p:inputText id="numero" placeholder="Ex.: 233" required="true" requiredMessage="Número Obrigatória"></p:inputText>
+                        </div>
+                        <div class="input-field col s6">
+                            <h:outputLabel value="Cep" for="cep"></h:outputLabel>
+                            <p:inputText id="cep" placeholder="Ex.: 00000-000" required="true" requiredMessage="Cep Obrigatória"></p:inputText>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <h:outputLabel value="Bairro" for="bairro"></h:outputLabel>
+                            <p:inputText id="bairro" placeholder="Ex.: Centro" required="true" requiredMessage="Bairro Obrigatória"></p:inputText>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s6">
+                            <h:outputLabel value="Cidade" for="cidade"></h:outputLabel>
+                            <p:inputText id="cidade" placeholder="Ex.: Cidadópolis" required="true" requiredMessage="Cidade Obrigatória"></p:inputText>
+                        </div>
+                        <div class="input-field col s6 center">
+                            <p:selectOneMenu id="estado" style="width: 240px;" required="true" requiredMessage="Estado Obrigatório">
+                                <f:selectItem itemLabel="Selecione um estado" itemValue="" />
+                                <f:selectItem itemLabel="Xbox One" itemValue="Xbox One" />
+                                <f:selectItem itemLabel="PS4" itemValue="PS4" />
+                                <f:selectItem itemLabel="Wii U" itemValue="Wii U" />
+                            </p:selectOneMenu>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <h:outputLabel value="Diária" for="diaria"></h:outputLabel>
+                            <p:inputText id="diaria" placeholder="Ex.: 150,00" required="true" requiredMessage="Valor Obrigatório"></p:inputText>
+                        </div>
+                    </div>
+
+                    <div class="col s12 center">
+                        <p:commandButton styleClass="waves-effect waves-green btn-flat" value="Cancelar"></p:commandButton>
+                        <p:commandButton styleClass="waves-effect waves-green btn-flat" value="Proximo"></p:commandButton>
+
+
+                    </div>
+                </h:form>
+            </div>
+        </div>
+    </h:body>
+</f:view>
+<h:outputScript href="https://code.jquery.com/jquery-1.10.2.js"></h:outputScript>
+<h:outputScript name="js/materialize.js"></h:outputScript>
+<h:outputScript name="js/materialize.min.js"></h:outputScript>
+</html>
