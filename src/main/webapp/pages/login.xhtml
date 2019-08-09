@@ -7,13 +7,13 @@
     <ui:define name="menu"></ui:define>
     <ui:define name="principal">
         <div class="container center row">
-            <div class="col s6 offset-s3 white" style="margin-top: 10%; padding: 15px; border-radius: 15px">
+            <div class="col s6 offset-s3 white principal" style="margin-top: 10%; padding: 15px; border-radius: 15px">
                 <h:form id="formCadastro">
                     <h3>Login</h3>
                     <div class="form-group input-field col s12">
                         <i class="material-icons prefix">email</i>
                         <h:outputLabel value="E-mail" for="email"></h:outputLabel>
-                        <p:inputText id="email" required="true"  value=""
+                        <p:inputText id="email" required="true"  value="#{loginBean.email}"
                                      requiredMessage="Email obrigatório"
                                      styleClass="form-control form-control-user">
                         </p:inputText>
@@ -22,7 +22,7 @@
                     <div class="form-group input-field col s12">
                         <i class="material-icons prefix">lock</i>
                         <h:outputLabel value="Senha" for="senha"></h:outputLabel>
-                        <p:password id="senha" required="true" value=""
+                        <p:password id="senha" required="true" value="#{loginBean.senha}"
                                     requiredMessage="Senha obrigatória"
                                     styleClass="form-control form-control-user"/>
                         <p:message for="senha" />

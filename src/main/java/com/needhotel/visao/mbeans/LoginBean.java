@@ -18,15 +18,16 @@ public class LoginBean {
 
     private UsuarioDaoImpl usuarioDao = new UsuarioDaoImpl();
 
-    private String login(){
-        Usuario usuario = usuarioDao.autenticacao(email, senha);
-
-        if (usuario != null){
+    public String login(){
+//        Usuario usuario = usuarioDao.autenticacao(email, senha);
+//
+//        if (usuario != null){
 //            HttpSession session = Facelet.getContext()
-            return "home.xhtml";
-        }else {
-            return "";
-        }
+//            return "pages/home.xhtml";
+//        }else {
+//            return "";
+//        }
+        return "pages/home.jsf";
     }
 
     public String getEmail() {
