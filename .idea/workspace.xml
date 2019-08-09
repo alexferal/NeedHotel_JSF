@@ -8,6 +8,8 @@
   <component name="ChangeListManager">
     <list default="true" id="969171ad-1e2a-4970-b862-6adea088320d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/needhotel/visao/mbeans/CadastroBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/needhotel/visao/mbeans/CadastroBean.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/needhotel/visao/validadores/OcorrenciaValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/needhotel/visao/validadores/DataValidator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/pages/cadastroUsuario.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/pages/cadastroUsuario.xhtml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/needHotel/pages/cadastroUsuario.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/target/needHotel/pages/cadastroUsuario.xhtml" afterDir="false" />
     </list>
@@ -177,7 +179,8 @@
       <workItem from="1564763333511" duration="1282000" />
       <workItem from="1565223867826" duration="9217000" />
       <workItem from="1565313457318" duration="3456000" />
-      <workItem from="1565351427940" duration="5893000" />
+      <workItem from="1565351427940" duration="6169000" />
+      <workItem from="1565358028434" duration="2803000" />
     </task>
     <servers />
   </component>
@@ -189,7 +192,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>

@@ -18,7 +18,7 @@
                         <p:inputText id="primeiroNome" required="true" requiredMessage="Nome obrigatório"
                                      styleClass="inputs words" value="#{cadastroBean.usuario.nome}">
                         </p:inputText>
-                        <h:message for="primeiroNome" />
+                        <h:message for="primeiroNome" styleClass="red-text" />
                     </div>
 
                     <div class="input-field col s12">
@@ -27,25 +27,34 @@
                         <p:inputText id="sobrenome" required="true" requiredMessage="Sobrenome é obrigatório"
                                      styleClass="inputs words" value="#{cadastroBean.usuario.sobreNome}">
                         </p:inputText>
-                        <h:message for="sobrenome" />
+                        <h:message for="sobrenome" styleClass="red-text" />
                     </div>
 
                     <div class="input-field col s12">
                         <i class="material-icons prefix">perm_identity</i>
                         <p:outputLabel for="cpf" value="CPF"></p:outputLabel>
-                        <p:inputText id="cpf" required="true" requiredMessage="CPF é obrigatório"
-                                     styleClass="inputs words" value="#{cadastroBean.usuario.cpf}">
-                        </p:inputText>
-                        <h:message for="cpf" />
+                        <p:inputMask id="cpf" required="true" requiredMessage="CPF é obrigatório"
+                                     styleClass="inputs words" value="#{cadastroBean.usuario.cpf}" mask="999.999.999-99">
+                        </p:inputMask>
+                        <h:message for="cpf" styleClass="red-text" />
                     </div>
-
                     <div class="input-field col s12">
                         <i class="material-icons prefix">local_phone</i>
                         <p:outputLabel for="telefone" value="Celular"></p:outputLabel>
-                        <p:inputText id="telefone" required="true" requiredMessage="Celular é obrigatório"
-                                     styleClass="inputs words" value="#{cadastroBean.usuario.telefone}">
-                        </p:inputText>
-                        <h:message for="telefone" />
+                        <p:inputMask id="telefone" required="true" requiredMessage="Celular é obrigatório"
+                                     styleClass="inputs words" value="#{cadastroBean.usuario.telefone}"
+                                     mask="(99) 99999-9999">
+                        </p:inputMask>
+                        <h:message for="telefone" styleClass="red-text" />
+                    </div>
+                    <div class="input-field col s12">
+                        <i class="material-icons prefix">today</i>
+                        <h:outputLabel for="data">Data de Nascimento</h:outputLabel>
+                        <p:inputMask id="data" validator="dataValidator" requiredMessage="Data de Nascimento é obrigatório"
+                                     value="#{cadastroBean.usuario.dataNascimento}" mask="99/99/9999">
+                            <f:converter converterId="localDateTimeConverter" />
+                        </p:inputMask>
+                        <h:message for="data" styleClass="red-text"/>
                     </div>
                 </div>
                 <div class="modal-footer container center">

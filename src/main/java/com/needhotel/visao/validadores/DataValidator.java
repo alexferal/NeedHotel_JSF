@@ -11,13 +11,14 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.Date;
 
-@FacesValidator("ocorrenciaValidator")
-public class OcorrenciaValidator implements Validator {
+@FacesValidator("dataValidator")
+public class DataValidator implements Validator {
     @Override
     public void validate(FacesContext context, UIComponent component, Object value) throws ValidatorException {
         LocalDate date = (LocalDate)value;
         if (date.isAfter(LocalDate.now())) {
-            FacesMessage facesMessage = new FacesMessage("Data inválida", "A data não pode ser maior do que a atual");
+            FacesMessage facesMessage = new FacesMessage("Data inválida",
+                    "A data não pode ser maior do que a atual");
             throw new ValidatorException(facesMessage);
         }
     }

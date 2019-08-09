@@ -20,6 +20,9 @@ public class CadastroBean {
 
 
     public void proximaEtapa(){
+        System.out.println(usuario.getDataNascimento());
+        System.out.println(usuario.getCpf());
+        System.out.println(usuario.getTelefone());
         etapa = EtapaCadastro.CONTA;
     }
 
