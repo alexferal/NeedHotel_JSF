@@ -7,9 +7,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="969171ad-1e2a-4970-b862-6adea088320d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/needhotel/visao/validadores/EmailValidator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/needhotel/visao/mbeans/CadastroBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/needhotel/visao/mbeans/CadastroBean.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/needhotel/visao/mbeans/LoginBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/needhotel/visao/mbeans/LoginBean.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/needhotel/visao/validadores/DataValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/needhotel/visao/validadores/DataValidator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/needhotel/visao/validadores/EmailValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/needhotel/visao/validadores/EmailValidator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/pages/cadastroUsuario.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/pages/cadastroUsuario.xhtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/needHotel.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/needHotel/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/target/needHotel/META-INF/MANIFEST.MF" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/needHotel/pages/cadastroUsuario.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/target/needHotel/pages/cadastroUsuario.xhtml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -48,6 +55,12 @@
       </MavenGeneralSettings>
     </option>
   </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="697" />
+    <option name="height" value="775" />
+  </component>
   <component name="ProjectId" id="1PBdS8r2QkCUv2BCkI3W6wzasLc" />
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
@@ -65,7 +78,7 @@
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
-    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="MavenSettings" />
   </component>
   <component name="RecentsManager">
@@ -180,6 +193,7 @@
       <workItem from="1565313457318" duration="3456000" />
       <workItem from="1565351427940" duration="6169000" />
       <workItem from="1565358028434" duration="4388000" />
+      <workItem from="1565445515457" duration="3476000" />
     </task>
     <servers />
   </component>
@@ -198,76 +212,19 @@
         </entry>
       </map>
     </option>
-  </component>
-  <component name="masterDetails">
-    <states>
-      <state key="ArtifactsStructureConfigurable.UI">
-        <settings>
-          <artifact-editor />
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="FacetStructureConfigurable.UI">
-        <settings>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="GlobalLibrariesConfigurable.UI">
-        <settings>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="JdkListConfigurable.UI">
-        <settings>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="ModuleStructureConfigurable.UI">
-        <settings>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="ProjectLibrariesConfigurable.UI">
-        <settings>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-    </states>
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="Branch">
+          <value>
+            <list />
+          </value>
+        </entry>
+        <entry key="User">
+          <value>
+            <list />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>

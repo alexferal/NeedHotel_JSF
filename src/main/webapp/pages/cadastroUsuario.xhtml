@@ -68,20 +68,22 @@
                     <div class="input-field col s12">
                         <i class="material-icons prefix">email</i>
                         <h:outputLabel for="email" value="E-mail" />
-                        <h:inputText id="email" required="true" requiredMessage="E-mail é obrigatório"
-                                     value="#{cadastroBean.usuario.email}"  validator="emailValidator"/>
-                        <h:message for="email" />
+                        <h:inputText id="email" required="true" requiredMessage="E-mail é obrigatório" validatorMessage="Formato inválido."
+                                     value="#{cadastroBean.usuario.email}">
+                            <f:validateRegex pattern="^[_A-Za-z0-9-\+]+(\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\.[A-Za-z0-9]+)*(\.[A-Za-z]{2,})$" />
+                        </h:inputText>
+                        <h:message for="email"  styleClass="red-text"/>
                     </div>
                     <div class="input-field col s12">
                         <i class="material-icons prefix">lock</i>
                         <h:outputLabel  for="senha" value="Senha" />
                         <h:inputSecret id="senha" required="true" requiredMessage="Senha é obrigatório!" value="#{cadastroBean.usuario.senha}" />
-                        <h:message for="senha" />
+                        <h:message for="senha" styleClass="red-text"/>
                     </div>
                 </div>
                 <div class="modal-footer container center">
-                    <h:commandButton styleClass="btn waves-effect waves-light" type="submit" value="Voltar" action="#{cadastroBean.voltarEtapa}"></h:commandButton>
-                    <h:commandButton styleClass="btn waves-effect waves-light" type="submit" value="Finalizar" action="#{cadastroBean.finalizarCadastro}"></h:commandButton>
+                    <h:commandButton styleClass="btn waves-effect waves-light" type="submit" value="Voltar" action="#{cadastroBean.voltarEtapa}"/>
+                    <p:commandLink styleClass="btn waves-effect waves-light" type="submit" value="Finalizar" action="#{cadastroBean.finalizarCadastro}" />
                 </div>
             </h:form>
         </div>

@@ -27,7 +27,7 @@ public class LoginBean {
 //        }else {
 //            return "";
 //        }
-        return "pages/home.jsf";
+        return "home.xhtml";
     }
 
     public String getEmail() {
