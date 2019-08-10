@@ -16,7 +16,7 @@
         <meta name="author" content="" />
         <title>Need Hotel</title>
         <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/icon?family=Material+Icons"/>
-        <link rel="stylesheet" type="text/css" href="../resources/css/style.css"/>
+        <h:outputStylesheet library="css" name="style.css"/>
         <h:outputStylesheet name="css/materialize.min.css"></h:outputStylesheet>
     </h:head>
 
@@ -60,12 +60,40 @@
                             <p:inputText id="cidade" placeholder="Ex.: Cidadópolis" required="true" requiredMessage="Cidade Obrigatória"></p:inputText>
                         </div>
                         <div class="input-field col s6 center">
-                            <p:selectOneMenu id="estado" style="width: 240px;" required="true" requiredMessage="Estado Obrigatório">
-                                <f:selectItem itemLabel="Selecione um estado" itemValue="" />
-                                <f:selectItem itemLabel="Xbox One" itemValue="Xbox One" />
-                                <f:selectItem itemLabel="PS4" itemValue="PS4" />
-                                <f:selectItem itemLabel="Wii U" itemValue="Wii U" />
+                            <p:selectOneMenu style="width: 100%" id="car" value="#{selectOneMenuView.car}">
+                                <f:selectItem itemLabel="Select One" itemValue="" />
+                                <f:selectItems value="#{selectOneMenuView.cars}" />
                             </p:selectOneMenu>
+<!--                            <p:selectOneMenu id="estado" style="width: 240px;" required="true" requiredMessage="Estado Obrigatório">-->
+<!--                                <f:selectItem itemLabel="Selecione um estado" itemValue="" />-->
+<!--                                <f:selectItem itemLabel="Acre " itemValue="AC" />-->
+<!--                                <f:selectItem itemLabel="Alagoas " itemValue="AL" />-->
+<!--                                <f:selectItem itemLabel="Amapá" itemValue="AP" />-->
+<!--                                <f:selectItem itemLabel="Amazonas" itemValue="AM" />-->
+<!--                                <f:selectItem itemLabel="Bahia " itemValue="BA" />-->
+<!--                                <f:selectItem itemLabel="Ceará" itemValue="CE" />-->
+<!--                                <f:selectItem itemLabel="Distrito Federal" itemValue="DF" />-->
+<!--                                <f:selectItem itemLabel="Espírito Santo " itemValue="ES" />-->
+<!--                                <f:selectItem itemLabel="Goiás" itemValue="GO" />-->
+<!--                                <f:selectItem itemLabel="Maranhão" itemValue="MA" />-->
+<!--                                <f:selectItem itemLabel="Mato Grosso " itemValue="MT" />-->
+<!--                                <f:selectItem itemLabel="Mato Grosso do Sul" itemValue="MS" />-->
+<!--                                <f:selectItem itemLabel="Minas Gerais" itemValue="MG" />-->
+<!--                                <f:selectItem itemLabel="Pará" itemValue="PA" />-->
+<!--                                <f:selectItem itemLabel="Paraíba" itemValue="PB" />-->
+<!--                                <f:selectItem itemLabel="Paraná" itemValue="PR" />-->
+<!--                                <f:selectItem itemLabel="Pernambuco" itemValue="PE" />-->
+<!--                                <f:selectItem itemLabel="Piauí" itemValue="PI" />-->
+<!--                                <f:selectItem itemLabel="Rio de Janeiro" itemValue="RJ" />-->
+<!--                                <f:selectItem itemLabel="Rio Grande do Norte" itemValue="RN" />-->
+<!--                                <f:selectItem itemLabel="Rio Grande do Sul" itemValue="RS" />-->
+<!--                                <f:selectItem itemLabel="Rondônia" itemValue="RO" />-->
+<!--                                <f:selectItem itemLabel="Roraima" itemValue="RR" />-->
+<!--                                <f:selectItem itemLabel="Santa Catarina" itemValue="SC" />-->
+<!--                                <f:selectItem itemLabel="São Paulo" itemValue="SP" />-->
+<!--                                <f:selectItem itemLabel="Sergipe" itemValue="SE" />-->
+<!--                                <f:selectItem itemLabel="Tocantins" itemValue="TO" />-->
+<!--                            </p:selectOneMenu>-->
                         </div>
                     </div>
                     <div class="row">
