@@ -7,17 +7,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="969171ad-1e2a-4970-b862-6adea088320d" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/needhotel/visao/mbeans/CadastroBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/needhotel/visao/mbeans/CadastroBean.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/needhotel/visao/mbeans/LoginBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/needhotel/visao/mbeans/LoginBean.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/needhotel/visao/validadores/DataValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/needhotel/visao/validadores/DataValidator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/needhotel/visao/validadores/EmailValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/needhotel/visao/validadores/EmailValidator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/pages/cadastroUsuario.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/pages/cadastroUsuario.xhtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/needHotel.kotlin_module" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/needHotel/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/target/needHotel/META-INF/MANIFEST.MF" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/needHotel/pages/cadastroUsuario.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/target/needHotel/pages/cadastroUsuario.xhtml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -193,7 +183,7 @@
       <workItem from="1565313457318" duration="3456000" />
       <workItem from="1565351427940" duration="6169000" />
       <workItem from="1565358028434" duration="4388000" />
-      <workItem from="1565445515457" duration="3476000" />
+      <workItem from="1565445515457" duration="3807000" />
     </task>
     <servers />
   </component>
