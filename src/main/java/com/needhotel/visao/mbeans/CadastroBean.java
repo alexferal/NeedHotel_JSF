@@ -3,8 +3,10 @@ package com.needhotel.visao.mbeans;
 import com.needhotel.modelo.dao.implementacao.UsuarioDaoImpl;
 import com.needhotel.modelo.domain.Usuario;
 
+import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
+import java.beans.ConstructorProperties;
 
 @ManagedBean
 @RequestScoped
@@ -18,6 +20,13 @@ public class CadastroBean {
     private Usuario usuario = new Usuario();
     private UsuarioDaoImpl usuarioDao = new UsuarioDaoImpl();
 
+    public UsuarioDaoImpl getUsuarioDao() {
+        return usuarioDao;
+    }
+
+    public void setUsuarioDao(UsuarioDaoImpl usuarioDao) {
+        this.usuarioDao = usuarioDao;
+    }
 
     public void proximaEtapa(){
         System.out.println(usuario.getDataNascimento());
@@ -28,11 +37,12 @@ public class CadastroBean {
 
     public String finalizarCadastro(){
         //TODO: código de salvar dados do usuário no BD
-        return "pages/login.xhtml";
+        return "pages/login.jsf";
     }
 
     public String voltarLogin(){
-        return "pages/login.xhtml";
+        System.out.println("voltar login");
+        return "/pages/login.jsf";
     }
 
     public void voltarEtapa(){

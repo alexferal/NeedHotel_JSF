@@ -9,81 +9,101 @@
     <ui:define name="principal">
         <div id="divCadastro" class="container white" style="margin-top: 15px; padding: 15px; border-radius: 15px;">
             <h4>Cadastro</h4>
-            <h:form rendered="#{cadastroBean.etapa == 'DADOS_PESSOAIS'}" id="formEtapa1">
-                <h6>Dados Pessoais</h6>
-                <div class="row container">
-                    <div class="input-field col s12">
-                        <i class="material-icons prefix">account_circle</i>
-                        <p:outputLabel for="primeiroNome" value="Nome"></p:outputLabel>
-                        <p:inputText id="primeiroNome" required="true" requiredMessage="Nome obrigatório"
-                                     styleClass="inputs words" value="#{cadastroBean.usuario.nome}">
-                        </p:inputText>
-                        <h:message for="primeiroNome" styleClass="red-text" />
+            <h:panelGroup rendered="#{cadastroBean.etapa == 'DADOS_PESSOAIS'}">
+                <h:form>
+                    <h6>Dados Pessoais</h6>
+                    <div class="row container">
+                        <div class="input-field col s12">
+                            <i class="material-icons prefix">account_circle</i>
+                            <p:outputLabel for="primeiroNome" value="Nome"></p:outputLabel>
+                            <p:inputText id="primeiroNome" required="true" requiredMessage="Nome obrigatório"
+                                         styleClass="inputs words" value="#{cadastroBean.usuario.nome}">
+                            </p:inputText>
+                            <h:message for="primeiroNome" styleClass="red-text" />
+                        </div>
+
+                        <div class="input-field col s12">
+                            <i class="material-icons prefix">account_circle</i>
+                            <p:outputLabel for="sobrenome" value="Sobrenome"></p:outputLabel>
+                            <p:inputText id="sobrenome" required="true" requiredMessage="Sobrenome é obrigatório"
+                                         styleClass="inputs words" value="#{cadastroBean.usuario.sobreNome}">
+                            </p:inputText>
+                            <h:message for="sobrenome" styleClass="red-text" />
+                        </div>
+
+                        <div class="input-field col s12">
+                            <i class="material-icons prefix">perm_identity</i>
+                            <p:outputLabel for="cpf" value="CPF"></p:outputLabel>
+                            <p:inputMask id="cpf" required="true" requiredMessage="CPF é obrigatório"
+                                         styleClass="inputs words" value="#{cadastroBean.usuario.cpf}" mask="999.999.999-99">
+                            </p:inputMask>
+                            <h:message for="cpf" styleClass="red-text" />
+                        </div>
+                        <div class="input-field col s12">
+                            <i class="material-icons prefix">local_phone</i>
+                            <p:outputLabel for="telefone" value="Celular"></p:outputLabel>
+                            <p:inputMask id="telefone" required="true" requiredMessage="Celular é obrigatório"
+                                         styleClass="inputs words" value="#{cadastroBean.usuario.telefone}"
+                                         mask="(99) 99999-9999">
+                            </p:inputMask>
+                            <h:message for="telefone" styleClass="red-text" />
+                        </div>
+                        <div class="input-field col s12">
+                            <i class="material-icons prefix">today</i>
+                            <h:outputLabel for="data">Data de Nascimento</h:outputLabel>
+                            <p:inputMask id="data" validator="dataValidator" requiredMessage="Data de Nascimento é obrigatório"
+                                         value="#{cadastroBean.usuario.dataNascimento}" mask="99/99/9999">
+                                <f:converter converterId="localDateTimeConverter" />
+                            </p:inputMask>
+                            <h:message for="data" styleClass="red-text"/>
+                        </div>
+                        <div class="input-field col s12">
+                            <i class="material-icons prefix">email</i>
+                            <h:outputLabel for="emaill" value="E-mail" />
+                            <h:inputText id="emaill" required="true" requiredMessage="E-mail é obrigatório"
+                                         value="#{cadastroBean.usuario.email}" validatorMessage="Formato inválido." autocomplete="false">
+                                <f:validateRegex pattern="(^[_A-Za-z0-9-\+]+(\.[_A-Za-z0-9-]+)*@[\p{L}\p{M}\p{N}.-]*(\.[\p{L}\p{M}]{2,})$)?" />
+                            </h:inputText>
+                            <h:message for="emaill" styleClass="red-text"/>
+                        </div>
+
                     </div>
 
-                    <div class="input-field col s12">
-                        <i class="material-icons prefix">account_circle</i>
-                        <p:outputLabel for="sobrenome" value="Sobrenome"></p:outputLabel>
-                        <p:inputText id="sobrenome" required="true" requiredMessage="Sobrenome é obrigatório"
-                                     styleClass="inputs words" value="#{cadastroBean.usuario.sobreNome}">
-                        </p:inputText>
-                        <h:message for="sobrenome" styleClass="red-text" />
+                </h:form>
+                <div class="modal-footer container center">
+                    <p:commandLink styleClass="btn waves-effect waves-light" value="Cancelar" action="#{cadastroBean.voltarLogin}"/>
+                    <p:commandButton ajax="true" styleClass="btn waves-effect waves-light" value="Próximo" action="#{cadastroBean.proximaEtapa}"/>
+                </div>
+            </h:panelGroup>
+
+            <h:panelGroup rendered="#{cadastroBean.etapa == 'CONTA'}">
+                <h:form>
+                    <h6>Conta</h6>
+                    <div class="row container">
+                        <div class="input-field col s12">
+                            <i class="material-icons prefix">email</i>
+                            <h:outputLabel for="email" value="E-mail" />
+                            <h:inputText id="email" required="true" requiredMessage="E-mail é obrigatório"
+                                         value="#{cadastroBean.usuario.email}" validatorMessage="Formato inválido." autocomplete="false">
+                                <f:validateRegex pattern="(^[_A-Za-z0-9-\+]+(\.[_A-Za-z0-9-]+)*@[\p{L}\p{M}\p{N}.-]*(\.[\p{L}\p{M}]{2,})$)?" />
+                            </h:inputText>
+                            <h:message for="email" styleClass="red-text"/>
+                        </div>
+
+                        <div class="input-field col s12">
+                            <i class="material-icons prefix">lock</i>
+                            <h:outputLabel  for="senha" value="Senha" autocomplete="false"/>
+                            <h:inputSecret id="senha" required="true" requiredMessage="Senha é obrigatório!" value="#{cadastroBean.usuario.senha}" />
+                            <h:message for="senha" />
+                        </div>
                     </div>
 
-                    <div class="input-field col s12">
-                        <i class="material-icons prefix">perm_identity</i>
-                        <p:outputLabel for="cpf" value="CPF"></p:outputLabel>
-                        <p:inputMask id="cpf" required="true" requiredMessage="CPF é obrigatório"
-                                     styleClass="inputs words" value="#{cadastroBean.usuario.cpf}" mask="999.999.999-99">
-                        </p:inputMask>
-                        <h:message for="cpf" styleClass="red-text" />
-                    </div>
-                    <div class="input-field col s12">
-                        <i class="material-icons prefix">local_phone</i>
-                        <p:outputLabel for="telefone" value="Celular"></p:outputLabel>
-                        <p:inputMask id="telefone" required="true" requiredMessage="Celular é obrigatório"
-                                     styleClass="inputs words" value="#{cadastroBean.usuario.telefone}"
-                                     mask="(99) 99999-9999">
-                        </p:inputMask>
-                        <h:message for="telefone" styleClass="red-text" />
-                    </div>
-                    <div class="input-field col s12">
-                        <i class="material-icons prefix">today</i>
-                        <h:outputLabel for="data">Data de Nascimento</h:outputLabel>
-                        <p:inputMask id="data" validator="dataValidator" requiredMessage="Data de Nascimento é obrigatório"
-                                     value="#{cadastroBean.usuario.dataNascimento}" mask="99/99/9999">
-                            <f:converter converterId="localDateTimeConverter" />
-                        </p:inputMask>
-                        <h:message for="data" styleClass="red-text"/>
-                    </div>
-                </div>
+                </h:form>
                 <div class="modal-footer container center">
-                    <h:commandButton styleClass="btn waves-effect waves-light" type="submit" value="Cancelar" action="#{cadastroBean.voltarLogin}"></h:commandButton>
-                    <h:commandButton styleClass="btn waves-effect waves-light" type="submit" value="Próximo" action="#{cadastroBean.proximaEtapa}"></h:commandButton>
+                    <h:commandButton styleClass="btn waves-effect waves-light" value="Voltar" action="#{cadastroBean.voltarEtapa}"></h:commandButton>
+                    <h:commandButton styleClass="btn waves-effect waves-light" value="Finalizar" action="#{cadastroBean.finalizarCadastro}"></h:commandButton>
                 </div>
-            </h:form>
-            <h:form rendered="#{cadastroBean.etapa == 'CONTA'}" id="formEtapa2">
-                <h6>Conta</h6>
-                <div class="row container">
-                    <div class="input-field col s12">
-                        <i class="material-icons prefix">email</i>
-                        <h:outputLabel for="email" value="E-mail" />
-                        <h:inputText id="email" required="true" requiredMessage="E-mail é obrigatório"
-                                     value="#{cadastroBean.usuario.email}"  validator="emailValidator"/>
-                        <h:message for="email" />
-                    </div>
-                    <div class="input-field col s12">
-                        <i class="material-icons prefix">lock</i>
-                        <h:outputLabel  for="senha" value="Senha" />
-                        <h:inputSecret id="senha" required="true" requiredMessage="Senha é obrigatório!" value="#{cadastroBean.usuario.senha}" />
-                        <h:message for="senha" />
-                    </div>
-                </div>
-                <div class="modal-footer container center">
-                    <h:commandButton styleClass="btn waves-effect waves-light" type="submit" value="Voltar" action="#{cadastroBean.voltarEtapa}"></h:commandButton>
-                    <h:commandButton styleClass="btn waves-effect waves-light" type="submit" value="Finalizar" action="#{cadastroBean.finalizarCadastro}"></h:commandButton>
-                </div>
-            </h:form>
+            </h:panelGroup>
         </div>
     </ui:define>
 
