@@ -23,107 +23,98 @@
     <h:body styleClass="blue-grey darken-1">
         <div Class="container white  principal">
             <h3>Cadastro</h3>
-            <h:panelGroup rendered="#{cadastroImovel.etapaCadastro == 'ETAPA1'}">
             <h6>Dados Pessoais</h6>
             <div class="row">
                 <h:form styleClass="col s12">
                     <div class="row">
                         <div class="input-field col s12">
                             <h:outputLabel value="Nome do Imóvel" for="nome"></h:outputLabel>
-                            <p:inputText id="nome" value="#{cadastroImovel.imovel.nome}" placeholder="Ex.: ED. Rozana Soares" required="true" requiredMessage="Nome Obrigatório"></p:inputText>
+                            <p:inputText id="nome" placeholder="Ex.: ED. Rozana Soares" required="true" requiredMessage="Nome Obrigatório"></p:inputText>
                         </div>
                     </div>
                     <div class="row">
                         <div class="input-field col s12">
                             <h:outputLabel value="Rua do Imóvel" for="rua"></h:outputLabel>
-                            <p:inputText id="rua" value="#{cadastroImovel.imovel.rua}" placeholder="Ex.: rua Santa Cecilia" required="true" requiredMessage="Rua Obrigatória"></p:inputText>
+                            <p:inputText id="rua" placeholder="Ex.: rua Santa Cecilia" required="true" requiredMessage="Rua Obrigatória"></p:inputText>
                         </div>
                     </div>
                     <div class="row">
                         <div class="input-field col s6">
                             <h:outputLabel value="Número" for="numero"></h:outputLabel>
-                            <p:inputText maxlength="10" id="numero" value="#{cadastroImovel.imovel.numero}" placeholder="Ex.: 233" required="true" requiredMessage="Número Obrigatória"></p:inputText>
+                            <p:inputText id="numero" placeholder="Ex.: 233" required="true" requiredMessage="Número Obrigatória"></p:inputText>
                         </div>
                         <div class="input-field col s6">
                             <h:outputLabel value="Cep" for="cep"></h:outputLabel>
-                            <p:inputMask mask="99999-999" id="cep" value="#{cadastroImovel.imovel.cep}" placeholder="Ex.: 00000-000" required="true" requiredMessage="Cep Obrigatória"></p:inputMask>
+                            <p:inputText id="cep" placeholder="Ex.: 00000-000" required="true" requiredMessage="Cep Obrigatória"></p:inputText>
                         </div>
                     </div>
                     <div class="row">
                         <div class="input-field col s12">
                             <h:outputLabel value="Bairro" for="bairro"></h:outputLabel>
-                            <p:inputText id="bairro" value="#{cadastroImovel.imovel.bairro}" placeholder="Ex.: Centro" required="true" requiredMessage="Bairro Obrigatória"></p:inputText>
+                            <p:inputText id="bairro" placeholder="Ex.: Centro" required="true" requiredMessage="Bairro Obrigatória"></p:inputText>
                         </div>
                     </div>
                     <div class="row">
                         <div class="input-field col s6">
                             <h:outputLabel value="Cidade" for="cidade"></h:outputLabel>
-                            <p:inputText id="cidade" value="#{cadastroImovel.imovel.cidade}" placeholder="Ex.: Cidadópolis" required="true" requiredMessage="Cidade Obrigatória"></p:inputText>
+                            <p:inputText id="cidade" placeholder="Ex.: Cidadópolis" required="true" requiredMessage="Cidade Obrigatória"></p:inputText>
                         </div>
                         <div class="input-field col s6 center">
-                            <p:selectOneMenu required="true" requiredMessage="Estado Obrigatório" style="width: 100%" id="car" value="#{cadastroImovel.imovel.estado}">
-                                <f:selectItem itemLabel="Selecione um estado" itemValue="" />
-                                <f:selectItems value="#{cadastroImovel.estados}" />
+                            <p:selectOneMenu style="width: 100%" id="car" value="#{selectOneMenuView.car}">
+                                <f:selectItem itemLabel="Select One" itemValue="" />
+                                <f:selectItems value="#{selectOneMenuView.cars}" />
                             </p:selectOneMenu>
+<!--                            <p:selectOneMenu id="estado" style="width: 240px;" required="true" requiredMessage="Estado Obrigatório">-->
+<!--                                <f:selectItem itemLabel="Selecione um estado" itemValue="" />-->
+<!--                                <f:selectItem itemLabel="Acre " itemValue="AC" />-->
+<!--                                <f:selectItem itemLabel="Alagoas " itemValue="AL" />-->
+<!--                                <f:selectItem itemLabel="Amapá" itemValue="AP" />-->
+<!--                                <f:selectItem itemLabel="Amazonas" itemValue="AM" />-->
+<!--                                <f:selectItem itemLabel="Bahia " itemValue="BA" />-->
+<!--                                <f:selectItem itemLabel="Ceará" itemValue="CE" />-->
+<!--                                <f:selectItem itemLabel="Distrito Federal" itemValue="DF" />-->
+<!--                                <f:selectItem itemLabel="Espírito Santo " itemValue="ES" />-->
+<!--                                <f:selectItem itemLabel="Goiás" itemValue="GO" />-->
+<!--                                <f:selectItem itemLabel="Maranhão" itemValue="MA" />-->
+<!--                                <f:selectItem itemLabel="Mato Grosso " itemValue="MT" />-->
+<!--                                <f:selectItem itemLabel="Mato Grosso do Sul" itemValue="MS" />-->
+<!--                                <f:selectItem itemLabel="Minas Gerais" itemValue="MG" />-->
+<!--                                <f:selectItem itemLabel="Pará" itemValue="PA" />-->
+<!--                                <f:selectItem itemLabel="Paraíba" itemValue="PB" />-->
+<!--                                <f:selectItem itemLabel="Paraná" itemValue="PR" />-->
+<!--                                <f:selectItem itemLabel="Pernambuco" itemValue="PE" />-->
+<!--                                <f:selectItem itemLabel="Piauí" itemValue="PI" />-->
+<!--                                <f:selectItem itemLabel="Rio de Janeiro" itemValue="RJ" />-->
+<!--                                <f:selectItem itemLabel="Rio Grande do Norte" itemValue="RN" />-->
+<!--                                <f:selectItem itemLabel="Rio Grande do Sul" itemValue="RS" />-->
+<!--                                <f:selectItem itemLabel="Rondônia" itemValue="RO" />-->
+<!--                                <f:selectItem itemLabel="Roraima" itemValue="RR" />-->
+<!--                                <f:selectItem itemLabel="Santa Catarina" itemValue="SC" />-->
+<!--                                <f:selectItem itemLabel="São Paulo" itemValue="SP" />-->
+<!--                                <f:selectItem itemLabel="Sergipe" itemValue="SE" />-->
+<!--                                <f:selectItem itemLabel="Tocantins" itemValue="TO" />-->
+<!--                            </p:selectOneMenu>-->
                         </div>
                     </div>
                     <div class="row">
                         <div class="input-field col s12">
                             <h:outputLabel value="Diária" for="diaria"></h:outputLabel>
-                            <p:inputText id="diaria" value="#{cadastroImovel.imovel.valor}" placeholder="Ex.: 150,00" required="true" requiredMessage="Valor Obrigatório">
-                                <f:convertNumber pattern="¤#,##0.00" currencySymbol="$" />
-                            </p:inputText>
+                            <p:inputText id="diaria" placeholder="Ex.: 150,00" required="true" requiredMessage="Valor Obrigatório"></p:inputText>
                         </div>
                     </div>
 
                     <div class="col s12 center">
-                        <p:commandButton styleClass="waves-effect waves-green btn-flat"  value="Voltar"></p:commandButton>
-                        <p:commandButton styleClass="waves-effect waves-green btn-flat" action="#{cadastroImovel.salvar}" value="Proximo"></p:commandButton>
-                    </div>
+                        <p:commandButton styleClass="waves-effect waves-green btn-flat" value="Cancelar"></p:commandButton>
+                        <p:commandButton styleClass="waves-effect waves-green btn-flat" value="Proximo"></p:commandButton>
 
+
+                    </div>
                 </h:form>
             </div>
-            </h:panelGroup>
-            <h:panelGroup rendered="#{cadastroImovel.etapaCadastro == 'ETAPA2'}">
-                <h6>Comodidades</h6>
-                <div class="row">
-                    <h:form enctype="multipart/form-data" styleClass="col s12">
-                        <div class="row">
-                            <div class="input-field col s6">
-                                <p:selectCheckboxMenu id="multiple" value="#{cadastroImovel.comodidadesSelecionadas}" label="Comidades" multiple="true"
-                                                      filter="true" filterMatchMode="startsWith" panelStyle="width:440px" style="width: 100%">
-                                    <f:selectItems value="#{cadastroImovel.comodidades}" />
-                                </p:selectCheckboxMenu>
-                            </div>
-                            <div class="row" style="margin-bottom: 0px;">
-                                <div class="input-field col s12">
-                                    <h:outputLabel value="Descrição" for="descricao"></h:outputLabel>
-                                    <p:inputTextarea id="descricao" value="#{cadastroImovel.imovel.descricao}" rows="5" cols="30" counter="display" maxlength="500" counterTemplate="{0} caracteres restantes" autoResize="false" />
-                                    <br />
-                                    <h:outputText id="display" />
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="input-field col s12">
-                                    <p:fileUpload value=""  label="Foto do Imóvel" mode="simple" skinSimple="true"/>
-                                </div>
-                            </div>
-
-                            <div class="col s12 center">
-                                <p:commandButton styleClass="waves-effect waves-green btn-flat" value="Cancelar"></p:commandButton>
-                                <p:commandButton styleClass="waves-effect waves-green btn-flat" value="Cadastrar"></p:commandButton>
-                            </div>
-                        </div>
-                    </h:form>
-                </div>
-            </h:panelGroup>
         </div>
     </h:body>
 </f:view>
 <h:outputScript href="https://code.jquery.com/jquery-1.10.2.js"></h:outputScript>
 <h:outputScript name="js/materialize.js"></h:outputScript>
 <h:outputScript name="js/materialize.min.js"></h:outputScript>
-<h:outputScript library="js" name="jquery.mask.min.js"/>
-<h:outputScript library="js" name="CadastroImovelValidator.js"/>
-
 </html>

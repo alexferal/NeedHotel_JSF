@@ -1,1 +1,0 @@
-$('#diaria').mask('000000000.00', {reverse: true});

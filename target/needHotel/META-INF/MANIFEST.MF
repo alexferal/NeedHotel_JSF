@@ -1,10 +1,5 @@
 Manifest-Version: 1.0
-<<<<<<< HEAD
 Built-By: Alex
 Created-By: IntelliJ IDEA
-=======
-Created-By: IntelliJ IDEA
-Built-By: danielalves
->>>>>>> ef39b21e625616c291e747b3f9a4107ba8590475
 Build-Jdk: 1.8.0_211
 
