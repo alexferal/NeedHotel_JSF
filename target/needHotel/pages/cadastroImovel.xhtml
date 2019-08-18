@@ -9,6 +9,7 @@
 
 <f:view>
     <h:head>
+        <f:loadBundle basename="i18n.messages" var="msg"/>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport"
               content="width=device-width, initial-scale=1, shrink-to-fit=no" />
@@ -22,36 +23,36 @@
 
     <h:body styleClass="blue-grey darken-1">
         <div Class="container white  principal">
-            <h3>Cadastro</h3>
+            <h3>#{msg['imovel.cadastro']}</h3>
             <h:panelGroup rendered="#{cadastroImovel.etapaCadastro == 'ETAPA1'}">
-                <h6>Dados Pessoais</h6>
+                <h6>#{msg['imovel.dadosPessoais']}</h6>
                 <div class="row">
                     <h:form styleClass="col s12">
                         <div class="row">
                             <div class="input-field col s12">
-                                <h:outputLabel value="Nome do Imóvel" for="nome"></h:outputLabel>
-                                <p:inputText id="nome"   value="#{cadastroImovel.imovel.nome}" placeholder="Ex.: ED. Rozana Soares" required="true" requiredMessage="Campo nome obrigatório"></p:inputText>
+                                <h:outputLabel value="#{msg['imovel.nome']}" for="nome"></h:outputLabel>
+                                <p:inputText id="nome"   value="#{cadastroImovel.imovel.nome}" placeholder="Ex.: ED. Rozana Soares" required="true" requiredMessage="#{msg['imovel.campoNomeObrigatorio']}"></p:inputText>
                                 <h:message for="nome" styleClass="red-text" />
                             </div>
                         </div>
                         <div class="row">
                             <div class="input-field col s12">
-                                <h:outputLabel value="Rua do Imóvel" for="rua"></h:outputLabel>
-                                <p:inputText id="rua" value="#{cadastroImovel.imovel.rua}" placeholder="Ex.: rua Santa Cecilia" required="true" requiredMessage="Campo rua obrigatório"></p:inputText>
+                                <h:outputLabel value="#{msg['imovel.rua']}" for="rua"></h:outputLabel>
+                                <p:inputText id="rua" value="#{cadastroImovel.imovel.rua}" placeholder="Ex.: rua Santa Cecilia" required="true" requiredMessage="#{msg['imovel.campoRuaObrigatorio']}"></p:inputText>
                                 <h:message for="rua" styleClass="red-text" />
                             </div>
                         </div>
                         <div class="row">
                             <div class="input-field col s6">
-                                <h:outputLabel value="Número" for="numero"></h:outputLabel>
-                                <p:inputText maxlength="10" converterMessage="Valor invalido, apenas números permitidos" id="numero" value="#{cadastroImovel.imovel.numero}" placeholder="Ex.: 233" required="true" requiredMessage="Campo número obrigatório">
+                                <h:outputLabel value="#{msg['imovel.numero']}" for="numero"></h:outputLabel>
+                                <p:inputText maxlength="10" converterMessage="#{msg['imovel.convetDiaria']}" id="numero" value="#{cadastroImovel.imovel.numero}" placeholder="Ex.: 233" required="true" requiredMessage="#{msg['imovel.campoNumeroObrigatorio']}">
                                     <f:convertNumber integerOnly="true"/>
                                 </p:inputText>
                                 <h:message for="numero" styleClass="red-text" />
                             </div>
                             <div class="input-field col s6">
-                                <h:outputLabel value="Cep" for="cep"></h:outputLabel>
-                                <p:inputText id="cep" validatorMessage="Cep Invalido" value="#{cadastroImovel.imovel.cep}" placeholder="Ex.: 00000-000" required="true" requiredMessage="Campo cep obrigatório">
+                                <h:outputLabel value="#{msg['imovel.cep']}" for="cep"></h:outputLabel>
+                                <p:inputText id="cep" validatorMessage="#{msg['imovel.validaCep']}" value="#{cadastroImovel.imovel.cep}" placeholder="Ex.: 00000-000" required="true" requiredMessage="#{msg['imovel.campoCepObrigatorio']}">
                                     <f:validateRegex pattern="[0-9]{5}-[\d]{3}"/>
                                 </p:inputText>
                                 <h:message for="cep" styleClass="red-text" />
@@ -59,20 +60,20 @@
                         </div>
                         <div class="row">
                             <div class="input-field col s12">
-                                <h:outputLabel value="Bairro" for="bairro"></h:outputLabel>
-                                <p:inputText id="bairro" value="#{cadastroImovel.imovel.bairro}" placeholder="Ex.: Centro" required="true" requiredMessage="Campo Bairro obrigatório"></p:inputText>
+                                <h:outputLabel value="#{msg['imovel.bairro']}" for="bairro"></h:outputLabel>
+                                <p:inputText id="bairro" value="#{cadastroImovel.imovel.bairro}" placeholder="Ex.: Centro" required="true" requiredMessage="#{msg['imovel.campoBairroObrigatorio']}"></p:inputText>
                                 <h:message for="bairro" styleClass="red-text" />
                             </div>
                         </div>
                         <div class="row">
                             <div class="input-field col s6">
-                                <h:outputLabel value="Cidade" for="cidade"></h:outputLabel>
-                                <p:inputText id="cidade" value="#{cadastroImovel.imovel.cidade}" placeholder="Ex.: Cidadópolis" required="true" requiredMessage="Campo cidade obrigatório"></p:inputText>
+                                <h:outputLabel value="#{msg['imovel.cidade']}" for="cidade"></h:outputLabel>
+                                <p:inputText id="cidade" value="#{cadastroImovel.imovel.cidade}" placeholder="Ex.: Cidadópolis" required="true" requiredMessage="#{msg['imovel.campoCidadeObrigatorio']}"></p:inputText>
                                 <h:message for="cidade" styleClass="red-text" />
                             </div>
                             <div class="input-field col s6 center">
-                                <p:selectOneMenu required="true" requiredMessage="Campo estado obrigatório" style="width: 100%" id="estado" value="#{cadastroImovel.imovel.estado}">
-                                    <f:selectItem itemLabel="Selecione um estado" itemValue="" />
+                                <p:selectOneMenu required="true" requiredMessage="#{msg['imovel.campoEstadoObrigatorio']}" style="width: 100%" id="estado" value="#{cadastroImovel.imovel.estado}">
+                                    <f:selectItem itemLabel="#{msg['imovel.estado']}" itemValue="" />
                                     <f:selectItems value="#{cadastroImovel.estados}" />
                                 </p:selectOneMenu>
                                 <h:message for="estado" styleClass="red-text" />
@@ -80,8 +81,8 @@
                         </div>
                         <div class="row">
                             <div class="input-field col s12">
-                                <h:outputLabel value="Diária" for="diaria"></h:outputLabel>
-                                <p:inputText id="diaria" value="#{cadastroImovel.imovel.valor}" placeholder="Ex.: 150,00" required="true" requiredMessage="Campo valor obrigatório">
+                                <h:outputLabel value="#{msg['imovel.diaria']}" for="diaria"></h:outputLabel>
+                                <p:inputText id="diaria" converterMessage="#{msg['imovel.convetDiaria']}" value="#{cadastroImovel.imovel.valor}" placeholder="Ex.: 150,00" required="true" requiredMessage="#{msg['imovel.campoDiariaObrigatorio']}">
                                     <f:convertNumber pattern="#,##0.00" minFractionDigits="2"  />
                                 </p:inputText>
                                 <h:message for="diaria" styleClass="red-text" />
@@ -89,40 +90,43 @@
                         </div>
 
                         <div class="col s12 center">
-                            <p:commandButton  value="Voltar"/>
-                            <p:commandButton update="@form"  action="#{cadastroImovel.salvar}" value="Proximo"/>
+                            <p:commandButton  value="#{msg['btn.voltar']}"/>
+                            <p:commandButton update="@all" action="#{cadastroImovel.proximaEtapa}" value="#{msg['btn.proximo']}"/>
                         </div>
                     </h:form>
                 </div>
             </h:panelGroup>
             <h:panelGroup rendered="#{cadastroImovel.etapaCadastro == 'ETAPA2'}">
-                <h6>Comodidades</h6>
+                <h6>#{msg['imovel.comodidade']}</h6>
                 <div class="row">
                     <h:form enctype="multipart/form-data" styleClass="col s12">
                         <div class="row">
-                            <div class="input-field col s6">
-                                <p:selectCheckboxMenu id="multiple" value="#{cadastroImovel.comodidadesSelecionadas}" label="Comidades" multiple="true"
+                            <div class="input-field col s6" style="padding: 0px">
+                                <p:selectCheckboxMenu required="true" requiredMessage="#{msg['imovel.campoComodidadeObrigatorio']}" id="multiple" value="#{cadastroImovel.comodidadesSelecionadas}" label="Comidades" multiple="true"
                                                       filter="true" filterMatchMode="startsWith" panelStyle="width:440px" style="width: 100%">
                                     <f:selectItems value="#{cadastroImovel.comodidades}" />
                                 </p:selectCheckboxMenu>
+                                <h:message for="multiple" styleClass="red-text"/>
                             </div>
                             <div class="row" style="margin-bottom: 0px;">
                                 <div class="input-field col s12">
-                                    <h:outputLabel value="Descrição" for="descricao"></h:outputLabel>
-                                    <p:inputTextarea id="descricao" value="#{cadastroImovel.imovel.descricao}" rows="5" cols="30" counter="display" maxlength="500" counterTemplate="{0} caracteres restantes" autoResize="false" />
+                                    <h:outputLabel value="#{msg['imovel.descricao']}" for="descricao"></h:outputLabel>
+                                    <p:inputTextarea required="true" requiredMessage="#{msg['imovel.campoDescricaoObrigatorio']}" id="descricao" value="#{cadastroImovel.imovel.descricao}" rows="5" cols="30" counter="display" maxlength="500" counterTemplate="{0} #{msg['imovel.quantCaracteres']}" autoResize="false" />
+                                    <h:message for="descricao" styleClass="red-text"/>
                                     <br />
                                     <h:outputText id="display" />
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="input-field col s12">
-                                    <p:fileUpload value=""  label="Foto do Imóvel" mode="simple" skinSimple="true"/>
+                                    <p:fileUpload id="foto"  value="#{cadastroImovel.foto}"  label="#{msg['imovel.foto']}" mode="simple" skinSimple="true"/>
+                                    <h:message for="foto" styleClass="red-text"/>
                                 </div>
                             </div>
 
                             <div class="col s12 center">
-                                <p:commandButton styleClass="waves-effect waves-green btn-flat" value="Cancelar"></p:commandButton>
-                                <p:commandButton styleClass="waves-effect waves-green btn-flat" action="#{cadastroImovel.cadastrar}" value="Cadastrar"></p:commandButton>
+                                <p:commandButton value="#{msg['btn.cancelar']}"></p:commandButton>
+                                <p:commandButton action="#{cadastroImovel.salvar}" value="#{msg['btn.cadastrar']}"></p:commandButton>
                             </div>
                         </div>
                     </h:form>

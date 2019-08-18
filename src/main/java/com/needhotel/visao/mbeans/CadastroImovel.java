@@ -1,11 +1,13 @@
 package com.needhotel.visao.mbeans;
 
+import com.needhotel.modelo.dao.implementacao.ImovelDaoImpl;
 import com.needhotel.modelo.domain.Imovel;
 
 import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
 
 import javax.faces.bean.ViewScoped;
+
 import javax.faces.model.SelectItem;
 import javax.faces.model.SelectItemGroup;
 
@@ -23,10 +25,12 @@ public class CadastroImovel {
     private String[] comodidadesSelecionadas;
     private List<String> comodidades;
     private Imovel imovel;
+    private ImovelDaoImpl imovelDao;
 
     @PostConstruct
     public void init() {
         imovel = new Imovel();
+        imovelDao = new ImovelDaoImpl();
         SelectItemGroup g1 = new SelectItemGroup("Norte");
         g1.setSelectItems(new SelectItem[] {
                 new SelectItem("AM", "Amazonas"),
@@ -85,7 +89,13 @@ public class CadastroImovel {
     }
 
     public void salvar(){
-        System.out.println(imovel.toString());
+//        imovelDao.cadastrarImovel(imovel);
+//        cadastrarComodidades();
+
+    }
+
+    public void proximaEtapa(){
+        this.etapaCadastro = EtapaCadastro.ETAPA2;
     }
 
     public List<SelectItem> getEstados() {
@@ -126,5 +136,11 @@ public class CadastroImovel {
 
     public void setComodidades(List<String> comodidades) {
         this.comodidades = comodidades;
+    }
+
+    private void cadastrarComodidades(){
+        for (String i : comodidadesSelecionadas){
+            imovelDao.cadastrarComodidades(i, imovel.getId());
+        }
     }
 }
