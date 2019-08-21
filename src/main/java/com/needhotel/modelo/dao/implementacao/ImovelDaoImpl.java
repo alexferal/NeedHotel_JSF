@@ -93,7 +93,7 @@ public class ImovelDaoImpl implements ImovelDao {
         List<Imovel> imoveis;
         try(Connection connection = factory.getConnection()){
             PreparedStatement statement = connection.prepareStatement(query);
-            statement.setString(1, nome);
+            statement.setString(1, "%"+nome+"%");
             ResultSet resultSet = statement.executeQuery();
             imoveis = setListaImoveis(resultSet);
             return imoveis;

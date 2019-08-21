@@ -30,7 +30,7 @@
 
 
   <welcome-file-list>
-    <welcome-file>pages/home.jsf</welcome-file>
+    <welcome-file>pages/buscaImovel.jsf</welcome-file>
   </welcome-file-list>
 
 </web-app>
