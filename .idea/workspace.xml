@@ -10,12 +10,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bf684abe-93e4-4330-af0b-5e549df4f43d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/needhotel/visao/mbeans/HomeBean.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/layout.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/layout.xhtml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/pages/home.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/pages/home.xhtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/needHotel/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/needHotel/WEB-INF/web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/resources/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/resources/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/needHotel/WEB-INF/layout.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/target/needHotel/WEB-INF/layout.xhtml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/needHotel/pages/home.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/target/needHotel/pages/home.xhtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/needHotel/resources/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/needHotel/resources/css/style.css" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -57,6 +58,7 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/webapp/resources" />
       <recent name="$PROJECT_DIR$/src/main/resources" />
     </key>
   </component>
@@ -165,7 +167,8 @@
       <workItem from="1565992629889" duration="596000" />
       <workItem from="1566002988033" duration="8253000" />
       <workItem from="1566087146374" duration="12642000" />
-      <workItem from="1566292708600" duration="3548000" />
+      <workItem from="1566292708600" duration="3765000" />
+      <workItem from="1566348760236" duration="7422000" />
     </task>
     <servers />
   </component>
