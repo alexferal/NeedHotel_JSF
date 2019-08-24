@@ -24,8 +24,8 @@ public class ConnectionFactory {
         try {
             properties.load(inputStream);
             url = properties.getProperty("conexao.url");
-            user = properties.getProperty("conexao.usuario");
-            password = properties.getProperty("conexao.senha");
+            user = properties.getProperty("conexao.user");
+            password = properties.getProperty("conexao.password");
             driver = properties.getProperty("conexao.driver");
         } catch (IOException e) {
             e.printStackTrace();

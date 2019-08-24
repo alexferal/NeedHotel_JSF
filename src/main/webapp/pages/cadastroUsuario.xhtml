@@ -57,17 +57,13 @@
                             </p:inputMask>
                             <h:message for="data" styleClass="red-text"/>
                         </div>
-
-
                     </div>
-
+                    <div class="modal-footer container center">
+                        <p:commandLink styleClass="btn" value="Cancelar" action="#{cadastroBean.voltarLogin}"/>
+                        <p:commandLink styleClass="btn" value="Próximo" action="#{cadastroBean.proximaEtapa}"/>
+                    </div>
                 </h:form>
-                <div class="modal-footer container center">
-                    <p:commandLink styleClass="btn waves-effect waves-light" value="Cancelar" action="#{cadastroBean.voltarLogin}"/>
-                    <p:commandButton ajax="true" styleClass="btn waves-effect waves-light" value="Próximo" action="#{cadastroBean.proximaEtapa}"/>
-                </div>
             </h:panelGroup>
-
             <h:panelGroup rendered="#{cadastroBean.etapa == 'CONTA'}">
                 <h:form>
                     <h6>Conta</h6>
@@ -89,13 +85,11 @@
                             <h:message for="senha" />
                         </div>
                     </div>
-            </h:form>
-
-                <div class="modal-footer container center">
-                    <h:commandButton styleClass="btn waves-effect waves-light" type="submit" value="Voltar" action="#{cadastroBean.voltarEtapa}"/>
-                    <p:commandLink styleClass="btn waves-effect waves-light" type="submit" value="Finalizar" action="#{cadastroBean.finalizarCadastro}" />
-
-                </div>
+                    <div class="modal-footer container center">
+                        <h:commandButton styleClass="btn" type="submit" value="Voltar" action="#{cadastroBean.voltarEtapa}"/>
+                        <p:commandLink styleClass="btn" type="submit" value="Finalizar" action="#{cadastroBean.finalizarCadastro}" />
+                    </div>
+                </h:form>
             </h:panelGroup>
         </div>
     </ui:define>

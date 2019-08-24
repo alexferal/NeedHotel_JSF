@@ -9,8 +9,9 @@
     <ui:define name="principal">
         <div id="divCadastro" class="container white" style="margin-top: 15px; padding: 15px; border-radius: 15px;">
             <h4>Cadastro</h4>
-            <h:panelGroup rendered="#{cadastroBean.etapa == 'DADOS_PESSOAIS'}">
-                <h:form>
+            <h:form>
+<!--                <p:ajax update="@all" event="change" listener="#{cadastroBean.proximaEtapa()}"/>-->
+                <h:panelGroup rendered="#{cadastroBean.etapa == 'DADOS_PESSOAIS'}">
                     <h6>Dados Pessoais</h6>
                     <div class="row container">
                         <div class="input-field col s12">
@@ -57,19 +58,14 @@
                             </p:inputMask>
                             <h:message for="data" styleClass="red-text"/>
                         </div>
-
-
                     </div>
+                    <div class="modal-footer container center">
+                        <p:commandLink styleClass="btn" value="Cancelar" action="#{cadastroBean.voltarLogin}"/>
+                        <p:commandLink styleClass="btn" value="Próximo" action="#{cadastroBean.proximaEtapa}"/>
+                    </div>
+                </h:panelGroup>
 
-                </h:form>
-                <div class="modal-footer container center">
-                    <p:commandLink styleClass="btn waves-effect waves-light" value="Cancelar" action="#{cadastroBean.voltarLogin}"/>
-                    <p:commandButton ajax="true" styleClass="btn waves-effect waves-light" value="Próximo" action="#{cadastroBean.proximaEtapa}"/>
-                </div>
-            </h:panelGroup>
-
-            <h:panelGroup rendered="#{cadastroBean.etapa == 'CONTA'}">
-                <h:form>
+                <h:panelGroup rendered="#{cadastroBean.etapa == 'CONTA'}">
                     <h6>Conta</h6>
                     <div class="row container">
                         <div class="input-field col s12">
@@ -89,14 +85,12 @@
                             <h:message for="senha" />
                         </div>
                     </div>
+                    <div class="modal-footer container center">
+                        <h:commandButton styleClass="btn" type="submit" value="Voltar" action="#{cadastroBean.voltarEtapa}"/>
+                        <p:commandLink styleClass="btn" type="submit" value="Finalizar" action="#{cadastroBean.finalizarCadastro}" />
+                    </div>
+                </h:panelGroup>
             </h:form>
-
-                <div class="modal-footer container center">
-                    <h:commandButton styleClass="btn waves-effect waves-light" type="submit" value="Voltar" action="#{cadastroBean.voltarEtapa}"/>
-                    <p:commandLink styleClass="btn waves-effect waves-light" type="submit" value="Finalizar" action="#{cadastroBean.finalizarCadastro}" />
-
-                </div>
-            </h:panelGroup>
         </div>
     </ui:define>
 
