@@ -119,8 +119,12 @@
                             </div>
                             <div class="row">
                                 <div class="input-field col s12">
-                                    <p:fileUpload id="foto"  value="#{cadastroImovel.foto}"  label="#{msg['imovel.foto']}" mode="simple" skinSimple="true"/>
-                                    <h:message for="foto" styleClass="red-text"/>
+                                    <p:fileUpload fileUploadListener="#{cadastroImovel.anexar}" fileLimit="1" fileLimitMessage="Excedido Limite de arquivos"
+                                                  cancelLabel="Cancelar" label="Foto do imovel" uploadLabel="Anexar"
+
+                                                  invalidFileMessage="Somente arquivos .jpg ou .png "
+                                                  allowTypes="/(\.|\/)(jpe?g|png)$/" value="#{cadastroImovel.foto}"
+                                                  mode="advanced" skinSimple="true" />
                                 </div>
                             </div>
 

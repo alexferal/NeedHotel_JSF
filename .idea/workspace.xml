@@ -10,15 +10,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bf684abe-93e4-4330-af0b-5e549df4f43d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/needhotel/modelo/dao/implementacao/ImovelDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/needhotel/modelo/dao/implementacao/ImovelDaoImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/needhotel/visao/mbeans/HomeBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/needhotel/visao/mbeans/HomeBean.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/needhotel/visao/mbeans/CadastroImovel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/needhotel/visao/mbeans/CadastroImovel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/faces-config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/faces-config.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/pages/home.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/pages/home.xhtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/pages/cadastroImovel.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/pages/cadastroImovel.xhtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/needHotel/WEB-INF/faces-config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/needHotel/WEB-INF/faces-config.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/needHotel/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/needHotel/WEB-INF/web.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/needHotel/pages/home.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/target/needHotel/pages/home.xhtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/needHotel/pages/cadastroImovel.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/target/needHotel/pages/cadastroImovel.xhtml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -42,40 +42,14 @@
         <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
         <item name="needHotel@localhost" type="feb32156:DbDataSourceImpl" />
       </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="needHotel@localhost" type="feb32156:DbDataSourceImpl" />
-        <item name="databases" type="d4e8921:DatabaseStructure$FamilyGroup" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="needHotel@localhost" type="feb32156:DbDataSourceImpl" />
-        <item name="databases" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="needHotel: database" type="162271b6:PgImplModel$Database" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="needHotel@localhost" type="feb32156:DbDataSourceImpl" />
-        <item name="databases" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="needHotel: database" type="162271b6:PgImplModel$Database" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="needHotel@localhost" type="feb32156:DbDataSourceImpl" />
-        <item name="databases" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="needHotel: database" type="162271b6:PgImplModel$Database" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="public: schema" type="983ebcf7:PgImplModel$Schema" />
-      </path>
     </expand>
     <select />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="jsf" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -96,6 +70,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -203,12 +178,7 @@
     <option name="allServicesViewState">
       <serviceView>
         <treeState>
-          <expand>
-            <path>
-              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@3e840e74" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-            </path>
-          </expand>
+          <expand />
           <select />
         </treeState>
       </serviceView>
@@ -232,7 +202,13 @@
       <workItem from="1566087146374" duration="12642000" />
       <workItem from="1566292708600" duration="3765000" />
       <workItem from="1566348760236" duration="8749000" />
-      <workItem from="1566386753809" duration="3398000" />
+      <workItem from="1566386753809" duration="3721000" />
+      <workItem from="1566405014807" duration="170000" />
+      <workItem from="1566410103538" duration="1279000" />
+      <workItem from="1566511580944" duration="599000" />
+      <workItem from="1566571060067" duration="132000" />
+      <workItem from="1566594184834" duration="24125000" />
+      <workItem from="1566658706748" duration="1254000" />
     </task>
     <servers />
   </component>

@@ -1,16 +1,14 @@
-<!DOCTYPE web-app PUBLIC
- "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
- "http://java.sun.com/dtd/web-app_2_3.dtd" >
+<?xml version="1.0" encoding="UTF-8"?>
 
-<web-app>
-  <display-name>Archetype Created Web Application</display-name>
+<web-app xmlns="http://java.sun.com/xml/ns/javaee"
+         version="2.5"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+
+    <display-name>Archetype Created Web Application</display-name>
   <context-param>
     <param-name>javax.faces.DEFAULT_SUFFIX</param-name>
     <param-value>.xhtml</param-value>
-  </context-param>
-  <context-param>
-    <param-name>primefaces.UPLOADER</param-name>
-    <param-value>auto|native|commons</param-value>
   </context-param>
   <context-param>
     <param-name>primefaces.THEME</param-name>
@@ -25,13 +23,31 @@
     <servlet-name>Faces Servlet</servlet-name>
     <url-pattern>*.jsf</url-pattern>
   </servlet-mapping>
-
-
-
-
+    <filter>
+        <filter-name>PrimeFaces FileUpload Filter</filter-name>
+        <filter-class>org.primefaces.webapp.filter.FileUploadFilter</filter-class>
+        <init-param>
+            <param-name>thresholdSize</param-name>
+            <param-value>51200</param-value>
+        </init-param>
+        <init-param>
+            <param-name>uploadDirectory</param-name>
+            <param-value>/tmp</param-value>
+        </init-param>
+    </filter>
+    <filter-mapping>
+        <filter-name>PrimeFaces FileUpload Filter</filter-name>
+        <servlet-name>Faces Servlet</servlet-name>
+    </filter-mapping>
+    <context-param>
+        <param-name>primefaces.UPLOADER</param-name>
+        <param-value>commons</param-value>
+    </context-param>
   <welcome-file-list>
-    <welcome-file>pages/buscaImovel.jsf</welcome-file>
+    <welcome-file>pages/cadastroImovel.jsf</welcome-file>
   </welcome-file-list>
+
+
 
 </web-app>
 

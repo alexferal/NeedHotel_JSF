@@ -2,15 +2,25 @@ package com.needhotel.visao.mbeans;
 
 import com.needhotel.modelo.dao.implementacao.ImovelDaoImpl;
 import com.needhotel.modelo.domain.Imovel;
+import org.primefaces.event.FileUploadEvent;
+import org.primefaces.model.UploadedFile;
 
 import javax.annotation.PostConstruct;
+import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 
 import javax.faces.bean.ViewScoped;
 
+import javax.faces.context.FacesContext;
 import javax.faces.model.SelectItem;
 import javax.faces.model.SelectItemGroup;
+import javax.servlet.ServletContext;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.time.ZonedDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -26,6 +36,7 @@ public class CadastroImovel {
     private List<String> comodidades;
     private Imovel imovel;
     private ImovelDaoImpl imovelDao;
+    private UploadedFile foto;
 
     @PostConstruct
     public void init() {
@@ -89,12 +100,57 @@ public class CadastroImovel {
     }
 
     public void salvar(){
-//        imovelDao.cadastrarImovel(imovel);
+        imovelDao.cadastrarImovel(imovel);
 //        cadastrarComodidades();
+//        upload();
+//        System.out.println(imovel.toString());
+    }
 
+    private void cadastrarComodidades() {
+        for (String comodidade : comodidadesSelecionadas){
+            imovelDao.cadastrarComodidades(comodidade, imovel.getId());
+        }
+    }
+
+    public void anexar(FileUploadEvent e){
+        this.foto = e.getFile();
+    }
+
+    private void upload(){
+        System.out.println(foto.getFileName());
+        ServletContext servletContext = (ServletContext) FacesContext.getCurrentInstance().getExternalContext().getContext();
+
+        if (foto != null){
+            String uploadPath =  servletContext.getRealPath("") + "imagem" + File.separator;
+            File uploadDir = new File(uploadPath);
+            if (!uploadDir.exists())
+                uploadDir.mkdir();
+
+            String fileName = foto.getFileName();
+            String nomeFoto = "imovel-" + ZonedDateTime.now().toInstant().getEpochSecond() + fileName.substring(fileName.indexOf('.'));
+            File file = new File(uploadPath + nomeFoto);
+            System.out.println(file.toString());
+            try {
+                FileOutputStream fos = new FileOutputStream(file);
+                fos.write(foto.getContents());
+                fos.close();
+                imovel.setFoto(nomeFoto);
+
+                FacesContext instance = FacesContext.getCurrentInstance();
+                instance.addMessage("mensagens", new FacesMessage(
+                        FacesMessage.SEVERITY_ERROR,
+                        fileName + " anexado com sucesso", null));
+
+            } catch (FileNotFoundException ex) {
+                ex.printStackTrace();
+            } catch (IOException ex) {
+                ex.printStackTrace();
+            }
+        }
     }
 
     public void proximaEtapa(){
+        System.out.println(imovel.toString());
         this.etapaCadastro = EtapaCadastro.ETAPA2;
     }
 
@@ -138,9 +194,11 @@ public class CadastroImovel {
         this.comodidades = comodidades;
     }
 
-    private void cadastrarComodidades(){
-        for (String i : comodidadesSelecionadas){
-            imovelDao.cadastrarComodidades(i, imovel.getId());
-        }
+    public UploadedFile getFoto() {
+        return foto;
+    }
+
+    public void setFoto(UploadedFile foto) {
+        this.foto = foto;
     }
 }
