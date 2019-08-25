@@ -59,8 +59,8 @@
                         </div>
                     </div>
                     <div class="modal-footer container center">
-                        <p:commandLink styleClass="btn" value="Cancelar" action="#{cadastroBean.voltarLogin}"/>
-                        <p:commandLink styleClass="btn" value="Próximo" action="#{cadastroBean.proximaEtapa}"/>
+                        <h:commandLink styleClass="btn" value="Cancelar" action="#{cadastroBean.voltarLogin}"/>
+                        <h:commandLink styleClass="btn" value="Próximo" action="#{cadastroBean.proximaEtapa}"/>
                     </div>
                 </h:form>
             </h:panelGroup>
@@ -77,17 +77,24 @@
                             </h:inputText>
                             <h:message for="email" styleClass="red-text"/>
                         </div>
-
                         <div class="input-field col s12">
                             <i class="material-icons prefix">lock</i>
                             <h:outputLabel  for="senha" value="Senha" autocomplete="false"/>
-                            <h:inputSecret id="senha" required="true" requiredMessage="Senha é obrigatório!" value="#{cadastroBean.usuario.senha}" />
-                            <h:message for="senha" />
+                            <h:inputSecret id="senha" required="true" requiredMessage="Senha é obrigatório!"
+                                           value="#{cadastroBean.usuario.senha}" validator="senhaValidator.formato"/>
+                            <h:message for="senha" styleClass="red-text" />
+                        </div>
+                        <div class="input-field col s12">
+                            <i class="material-icons prefix">lock</i>
+                            <h:outputLabel  for="confirmaSenha" value="Confirma Senha" autocomplete="false"/>
+                            <h:inputSecret id="confirmaSenha" required="true" requiredMessage="Senha é obrigatório!"
+                                           value="#{cadastroBean.confirmaSenha}" validator="senhaValidator.confirmacao"/>
+                            <h:message for="confirmaSenha" styleClass="red-text" />
                         </div>
                     </div>
                     <div class="modal-footer container center">
-                        <h:commandButton styleClass="btn" type="submit" value="Voltar" action="#{cadastroBean.voltarEtapa}"/>
-                        <p:commandLink styleClass="btn" type="submit" value="Finalizar" action="#{cadastroBean.finalizarCadastro}" />
+                        <h:commandLink styleClass="btn" type="submit" value="Voltar" action="#{cadastroBean.voltarEtapa}"/>
+                        <h:commandLink styleClass="btn" type="submit" value="Finalizar" action="#{cadastroBean.finalizarCadastro}" />
                     </div>
                 </h:form>
             </h:panelGroup>

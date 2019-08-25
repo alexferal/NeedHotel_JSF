@@ -9,9 +9,8 @@
     <ui:define name="principal">
         <div id="divCadastro" class="container white" style="margin-top: 15px; padding: 15px; border-radius: 15px;">
             <h4>Cadastro</h4>
-            <h:form>
-<!--                <p:ajax update="@all" event="change" listener="#{cadastroBean.proximaEtapa()}"/>-->
-                <h:panelGroup rendered="#{cadastroBean.etapa == 'DADOS_PESSOAIS'}">
+            <h:panelGroup rendered="#{cadastroBean.etapa == 'DADOS_PESSOAIS'}">
+                <h:form>
                     <h6>Dados Pessoais</h6>
                     <div class="row container">
                         <div class="input-field col s12">
@@ -60,12 +59,13 @@
                         </div>
                     </div>
                     <div class="modal-footer container center">
-                        <p:commandLink styleClass="btn" value="Cancelar" action="#{cadastroBean.voltarLogin}"/>
-                        <p:commandLink styleClass="btn" value="Próximo" action="#{cadastroBean.proximaEtapa}"/>
+                        <h:commandLink styleClass="btn" value="Cancelar" action="#{cadastroBean.voltarLogin}"/>
+                        <h:commandLink styleClass="btn" value="Próximo" action="#{cadastroBean.proximaEtapa}"/>
                     </div>
-                </h:panelGroup>
-
-                <h:panelGroup rendered="#{cadastroBean.etapa == 'CONTA'}">
+                </h:form>
+            </h:panelGroup>
+            <h:panelGroup rendered="#{cadastroBean.etapa == 'CONTA'}">
+                <h:form>
                     <h6>Conta</h6>
                     <div class="row container">
                         <div class="input-field col s12">
@@ -77,20 +77,29 @@
                             </h:inputText>
                             <h:message for="email" styleClass="red-text"/>
                         </div>
-
                         <div class="input-field col s12">
                             <i class="material-icons prefix">lock</i>
                             <h:outputLabel  for="senha" value="Senha" autocomplete="false"/>
-                            <h:inputSecret id="senha" required="true" requiredMessage="Senha é obrigatório!" value="#{cadastroBean.usuario.senha}" />
-                            <h:message for="senha" />
+                            <h:inputSecret id="senha" required="true" requiredMessage="Senha é obrigatório!"
+                                           value="#{cadastroBean.usuario.senha}" validator="senhaValidator.formato"/>
+                            <h:message for="senha" styleClass="red-text" />
+                        </div>
+                        <div class="input-field col s12">
+                            <i class="material-icons prefix">lock</i>
+                            <h:outputLabel  for="confirmaSenha" value="Confirma Senha" autocomplete="false"/>
+                            <h:inputSecret id="confirmaSenha" required="true" requiredMessage="Senha é obrigatório!"
+                                           value="#{cadastroBean.confirmaSenha}" validatorMessage="Senha incompatível."
+                                            validator="senhaValidator.confirmacao">
+                            </h:inputSecret>
+                            <h:message for="confirmaSenha" styleClass="red-text" />
                         </div>
                     </div>
                     <div class="modal-footer container center">
-                        <h:commandButton styleClass="btn" type="submit" value="Voltar" action="#{cadastroBean.voltarEtapa}"/>
-                        <p:commandLink styleClass="btn" type="submit" value="Finalizar" action="#{cadastroBean.finalizarCadastro}" />
+                        <h:commandLink styleClass="btn" type="submit" value="Voltar" action="#{cadastroBean.voltarEtapa}"/>
+                        <h:commandLink styleClass="btn" type="submit" value="Finalizar" action="#{cadastroBean.finalizarCadastro}" />
                     </div>
-                </h:panelGroup>
-            </h:form>
+                </h:form>
+            </h:panelGroup>
         </div>
     </ui:define>
 

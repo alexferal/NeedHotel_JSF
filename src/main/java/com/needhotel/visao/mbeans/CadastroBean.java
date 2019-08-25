@@ -5,10 +5,10 @@ import com.needhotel.modelo.domain.Usuario;
 
 import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
-import javax.faces.bean.RequestScoped;
+import javax.faces.bean.ViewScoped;
 
 @ManagedBean
-@RequestScoped
+@ViewScoped
 
 public class CadastroBean {
 
@@ -16,26 +16,32 @@ public class CadastroBean {
         DADOS_PESSOAIS, CONTA
     }
 
-    private EtapaCadastro etapa= EtapaCadastro.DADOS_PESSOAIS;
-    private Usuario usuario = new Usuario();
-    private UsuarioDaoImpl usuarioDao = new UsuarioDaoImpl();
+    private String confirmaSenha;
+    private EtapaCadastro etapa;
+    private Usuario usuario;
+    private UsuarioDaoImpl usuarioDao;
 
-//    @PostConstruct
-//    public void init(){
-//        etapa = EtapaCadastro.DADOS_PESSOAIS;
-//        usuario = new Usuario();
-//        usuarioDao = new UsuarioDaoImpl();
-//    }
+    //////////////////////////////////
+    //CONSTRUTORES
+    //////////////////////////////////
+    @PostConstruct
+    public void init(){
+        etapa = EtapaCadastro.DADOS_PESSOAIS;
+        usuario = new Usuario();
+        usuarioDao = new UsuarioDaoImpl();
+    }
+
+    //////////////////////////////////
+    //MÉTODOS
+    //////////////////////////////////
 
     public void proximaEtapa(){
-        System.out.println("próxima etapa");
         etapa = EtapaCadastro.CONTA;
     }
 
     public String finalizarCadastro(){
         //TODO: código de salvar dados do usuário no BD
-        usuarioDao.cadastrarUsuario(usuario);
-        return "pages/login.jsf";
+        return "login.xhtml";
     }
 
     public String voltarLogin(){
@@ -45,6 +51,10 @@ public class CadastroBean {
     public void voltarEtapa(){
         etapa = EtapaCadastro.DADOS_PESSOAIS;
     }
+
+    //////////////////////////////////
+    //GETS e SETS
+    //////////////////////////////////
 
     public Usuario getUsuario() {
         return usuario;
@@ -60,5 +70,13 @@ public class CadastroBean {
 
     public void setEtapa(EtapaCadastro etapa) {
         this.etapa = etapa;
+    }
+
+    public String getConfirmaSenha() {
+        return confirmaSenha;
+    }
+
+    public void setConfirmaSenha(String confirmaSenha) {
+        this.confirmaSenha = confirmaSenha;
     }
 }
