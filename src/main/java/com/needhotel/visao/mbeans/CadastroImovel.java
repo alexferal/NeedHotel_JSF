@@ -30,7 +30,7 @@ public class CadastroImovel {
     public enum EtapaCadastro{
         ETAPA1, ETAPA2
     };
-    private  EtapaCadastro etapaCadastro = EtapaCadastro.ETAPA1;
+    private  EtapaCadastro etapaCadastro = EtapaCadastro.ETAPA2;
     private List<SelectItem> estados;
     private String[] comodidadesSelecionadas;
     private List<String> comodidades;
@@ -100,13 +100,13 @@ public class CadastroImovel {
     }
 
     public void salvar(){
-        imovelDao.cadastrarImovel(imovel);
+//        imovelDao.cadastrarImovel(imovel);
 //        cadastrarComodidades();
 //        upload();
-//        System.out.println(imovel.toString());
+        System.out.println("aaaaaaaaaaa");
     }
 
-    private void cadastrarComodidades() {
+    public void cadastrarComodidades() {
         for (String comodidade : comodidadesSelecionadas){
             imovelDao.cadastrarComodidades(comodidade, imovel.getId());
         }

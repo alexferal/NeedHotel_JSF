@@ -112,25 +112,26 @@
                                 <div class="input-field col s12">
                                     <h:outputLabel value="#{msg['imovel.descricao']}" for="descricao"></h:outputLabel>
                                     <p:inputTextarea required="true" requiredMessage="#{msg['imovel.campoDescricaoObrigatorio']}" id="descricao" value="#{cadastroImovel.imovel.descricao}" rows="5" cols="30" counter="display" maxlength="500" counterTemplate="{0} #{msg['imovel.quantCaracteres']}" autoResize="false" />
-                                    <h:message for="descricao" styleClass="red-text"/>
                                     <br />
-                                    <h:outputText id="display" />
+                                    <h:outputText id="display" /><br/>
+                                    <h:message for="descricao" styleClass="red-text"/>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="input-field col s12">
-                                    <p:fileUpload fileUploadListener="#{cadastroImovel.anexar}" fileLimit="1" fileLimitMessage="Excedido Limite de arquivos"
+                                    <p:fileUpload required="true" requiredMessage="asdsadadsadsa" fileUploadListener="#{cadastroImovel.anexar}" fileLimit="1" fileLimitMessage="Excedido Limite de arquivos"
                                                   cancelLabel="Cancelar" label="Foto do imovel" uploadLabel="Anexar"
-
                                                   invalidFileMessage="Somente arquivos .jpg ou .png "
                                                   allowTypes="/(\.|\/)(jpe?g|png)$/" value="#{cadastroImovel.foto}"
-                                                  mode="advanced" skinSimple="true" />
+                                                  mode="advanced" skinSimple="true" id="foto">
+                                        <f:validator validatorId="fotoNula" for="foto"></f:validator>
+                                    </p:fileUpload>
+                                    <h:message for="foto" styleClass="red-text"/>
                                 </div>
                             </div>
-
                             <div class="col s12 center">
-                                <p:commandButton value="#{msg['btn.cancelar']}"></p:commandButton>
-                                <p:commandButton action="#{cadastroImovel.salvar}" value="#{msg['btn.cadastrar']}"></p:commandButton>
+                                <h:commandButton value="#{msg['btn.cancelar']}"></h:commandButton>
+                                <h:commandButton update="@all" action="#{cadastroImovel.salvar}" value="#{msg['btn.cadastrar']}"></h:commandButton>
                             </div>
                         </div>
                     </h:form>
