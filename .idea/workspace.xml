@@ -7,13 +7,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f9822508-0b80-419c-926f-eeb0602ea8d5" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/needhotel/visao/mbeans/CadastroImovel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/needhotel/visao/mbeans/CadastroImovel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/pages/cadastroImovel.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/pages/cadastroImovel.xhtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/needHotel/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/target/needHotel/META-INF/MANIFEST.MF" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/needHotel/pages/cadastroImovel.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/target/needHotel/pages/cadastroImovel.xhtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/needHotel/pages/cadastroUsuario.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/target/needHotel/pages/cadastroUsuario.xhtml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -194,12 +189,7 @@
     <option name="allServicesViewState">
       <serviceView>
         <treeState>
-          <expand>
-            <path>
-              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@6c2c4b6d" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-            </path>
-          </expand>
+          <expand />
           <select />
         </treeState>
       </serviceView>
@@ -223,7 +213,7 @@
       <workItem from="1566751442793" duration="6419000" />
       <workItem from="1566770949726" duration="12341000" />
       <workItem from="1566859149952" duration="2375000" />
-      <workItem from="1566862342183" duration="225000" />
+      <workItem from="1566862342183" duration="4733000" />
     </task>
     <servers />
   </component>

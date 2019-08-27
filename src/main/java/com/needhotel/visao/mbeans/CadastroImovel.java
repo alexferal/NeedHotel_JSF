@@ -30,13 +30,14 @@ public class CadastroImovel {
     public enum EtapaCadastro{
         ETAPA1, ETAPA2
     };
-    private  EtapaCadastro etapaCadastro = EtapaCadastro.ETAPA2;
+    private  EtapaCadastro etapaCadastro = EtapaCadastro.ETAPA1;
     private List<SelectItem> estados;
     private String[] comodidadesSelecionadas;
     private List<String> comodidades;
     private Imovel imovel;
     private ImovelDaoImpl imovelDao;
     private UploadedFile foto;
+
 
     @PostConstruct
     public void init() {
@@ -100,10 +101,9 @@ public class CadastroImovel {
     }
 
     public void salvar(){
-//        imovelDao.cadastrarImovel(imovel);
-//        cadastrarComodidades();
-//        upload();
-        System.out.println("aaaaaaaaaaa");
+        upload();
+        imovelDao.cadastrarImovel(imovel);
+        cadastrarComodidades();
     }
 
     public void cadastrarComodidades() {
