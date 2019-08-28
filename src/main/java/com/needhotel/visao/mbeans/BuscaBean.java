@@ -13,8 +13,6 @@ import java.util.List;
 public class BuscaBean {
     private ImovelDaoImpl imovelDao;
     private List<Imovel> imovelList;
-
-    @ManagedProperty("#{homeBean.busca}")
     private String busca;
 
     @PostConstruct
@@ -22,7 +20,8 @@ public class BuscaBean {
         imovelDao = new ImovelDaoImpl();
         imovelList = new ArrayList<>();
     }
-    public String busca(){
+    public String buscaImoveis() {
+        imovelList = imovelDao.buscarPorNome(busca);
         return "buscaImovel.xhtml";
     }
 

@@ -6,11 +6,34 @@
                 template="../WEB-INF/layout.xhtml">
     <ui:define name="menu"></ui:define>
     <ui:define name="principal">
-        <div class="row container" style="margin-top: 30px" >
-            <h:form StyleClass="col s6 white row ">
-                <p:inputText value="#{homeBean.busca}" style="border-radius: 10px; margin-right: 10px" styleClass="col s10 white" id="search" type="text" placeholder="Cidades, Hoteis, ..." name="search" />
-                <p:commandButton action="#{buscaBean.busca}" style="width: 100px; height: 43px" icon="pi pi-search"></p:commandButton>
+        <div class="row container " style="margin-top: 30px" >
+            <h:form StyleClass="col s6 white row">
+                <p:inputText required="true" value="#{buscaBean.busca}" style="border-radius: 10px; margin-right: 10px" styleClass="col s10 white" id="search" type="text" placeholder="Cidades, Hoteis, ..." name="search" />
+                <p:commandButton update="@all" action="#{buscaBean.buscaImoveis}" style="width: 100px; height: 43px" icon="pi pi-search"></p:commandButton>
             </h:form>
         </div>
+        <div class="divider"></div>
+        <p:repeat value="#{buscaBean.imovelList}" var="imovel">
+            <h3 class="center white-text">Resultados</h3>
+            <div class="col s9 m7">
+                <div class="card horizontal z-depth-4">
+                    <div class="card-image">
+                        <h:graphicImage url="../assets/imagens/#{imovel.foto}" height="300" width="400"/>
+                    </div>
+                    <div class="card-stacked">
+                        <div class="card-content">
+                            <h5 id="nomeImovel">${imovel.nome}</h5>
+                            <p>${imovel.cidade}-${imovel.estado}</p>
+                            <p>Endereço: ${imovel.rua}</p>
+                            <p>Valor da Diária - R$:${imovel.valor}</p>
+                        </div>
+                        <div class="card-action">
+                            <a href="perfilImovel?id=${imovel.id}" class="btn-floating waves-effect waves-light black" style="float: right"><i class="material-icons">navigate_next</i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </p:repeat>
+
     </ui:define>
 </ui:composition>

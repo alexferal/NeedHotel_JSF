@@ -12,8 +12,8 @@
             </p:imageSwitch>
             <div class="row container" style="margin-top: 30px" >
             <h:form StyleClass="col s6 white row ">
-                <p:inputText value="#{homeBean.busca}" style="border-radius: 10px; margin-right: 10px" styleClass="col s10 white" id="search" type="text" placeholder="Cidades, Hoteis, ..." name="search" />
-                <p:commandButton action="#{buscaBean.busca}" style="width: 100px; height: 43px" icon="pi pi-search"></p:commandButton>
+                <p:inputText required="true" value="#{buscaBean.busca}" style="border-radius: 10px; margin-right: 10px" styleClass="col s10 white" id="search" type="text" placeholder="Cidades, Hoteis, ..." name="search" />
+                <p:commandButton action="#{buscaBean.buscaImoveis}" style="width: 100px; height: 43px" icon="pi pi-search"></p:commandButton>
             </h:form>
             </div>
     </ui:define>

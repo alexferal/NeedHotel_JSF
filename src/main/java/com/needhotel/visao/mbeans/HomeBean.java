@@ -12,7 +12,6 @@ import java.util.List;
 public class HomeBean {
 
     private List<String> images;
-    private String busca;
 
     @PostConstruct
     public void init() {
@@ -24,13 +23,5 @@ public class HomeBean {
 
     public List<String> getImages() {
         return images;
-    }
-
-    public String getBusca() {
-        return busca;
-    }
-
-    public void setBusca(String busca) {
-        this.busca = busca;
     }
 }

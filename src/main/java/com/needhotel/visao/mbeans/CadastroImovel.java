@@ -121,7 +121,7 @@ public class CadastroImovel {
         ServletContext servletContext = (ServletContext) FacesContext.getCurrentInstance().getExternalContext().getContext();
 
         if (foto != null){
-            String uploadPath =  servletContext.getRealPath("") + "imagem" + File.separator;
+            String uploadPath =  servletContext.getRealPath("") + "assets/imagens" + File.separator;
             File uploadDir = new File(uploadPath);
             if (!uploadDir.exists())
                 uploadDir.mkdir();
