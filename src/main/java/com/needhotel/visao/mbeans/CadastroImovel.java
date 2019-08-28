@@ -2,6 +2,7 @@ package com.needhotel.visao.mbeans;
 
 import com.needhotel.modelo.dao.implementacao.ImovelDaoImpl;
 import com.needhotel.modelo.domain.Imovel;
+import org.primefaces.component.fileupload.FileUpload;
 import org.primefaces.event.FileUploadEvent;
 import org.primefaces.model.UploadedFile;
 
@@ -16,13 +17,11 @@ import javax.faces.model.SelectItem;
 import javax.faces.model.SelectItemGroup;
 import javax.servlet.ServletContext;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
+import java.io.*;
 import java.time.ZonedDateTime;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Properties;
 
 @ManagedBean
 @ViewScoped
@@ -37,7 +36,6 @@ public class CadastroImovel {
     private Imovel imovel;
     private ImovelDaoImpl imovelDao;
     private UploadedFile foto;
-
 
     @PostConstruct
     public void init() {
@@ -101,9 +99,14 @@ public class CadastroImovel {
     }
 
     public void salvar(){
-        upload();
-        imovelDao.cadastrarImovel(imovel);
-        cadastrarComodidades();
+        if (foto == null) {
+            FacesMessage message = new FacesMessage("Envio de um arquivo requerido", "Envie ao menos um arquivo");
+            FacesContext.getCurrentInstance().addMessage("foto", message);
+        } else {
+            upload();
+            imovelDao.cadastrarImovel(imovel);
+            cadastrarComodidades();
+        }
     }
 
     public void cadastrarComodidades() {
@@ -117,36 +120,44 @@ public class CadastroImovel {
     }
 
     private void upload(){
-        System.out.println(foto.getFileName());
-        ServletContext servletContext = (ServletContext) FacesContext.getCurrentInstance().getExternalContext().getContext();
 
-        if (foto != null){
-            String uploadPath =  servletContext.getRealPath("") + "assets/imagens" + File.separator;
-            File uploadDir = new File(uploadPath);
-            if (!uploadDir.exists())
-                uploadDir.mkdir();
+        InputStream inputStream = Thread.currentThread().getContextClassLoader().getResourceAsStream("config.properties");
+        Properties properties = new Properties();
+        try {
+            properties.load(inputStream);
+            String uploadPath = properties.getProperty("upload.dir") + File.separator + "imagens" + File.separator;
 
-            String fileName = foto.getFileName();
-            String nomeFoto = "imovel-" + ZonedDateTime.now().toInstant().getEpochSecond() + fileName.substring(fileName.indexOf('.'));
-            File file = new File(uploadPath + nomeFoto);
-            System.out.println(file.toString());
-            try {
-                FileOutputStream fos = new FileOutputStream(file);
-                fos.write(foto.getContents());
-                fos.close();
-                imovel.setFoto(nomeFoto);
+            if (foto != null){
+                File uploadDir = new File(uploadPath);
+                if (!uploadDir.exists())
+                    uploadDir.mkdir();
 
-                FacesContext instance = FacesContext.getCurrentInstance();
-                instance.addMessage("mensagens", new FacesMessage(
-                        FacesMessage.SEVERITY_ERROR,
-                        fileName + " anexado com sucesso", null));
+                String fileName = foto.getFileName();
+                String nomeFoto = "imovel-" + ZonedDateTime.now().toInstant().getEpochSecond() + fileName.substring(fileName.indexOf('.'));
+                File file = new File(uploadPath + nomeFoto);
+                System.out.println(file.toString());
+                try {
+                    FileOutputStream fos = new FileOutputStream(file);
+                    fos.write(foto.getContents());
+                    fos.close();
+                    imovel.setFoto(nomeFoto);
 
-            } catch (FileNotFoundException ex) {
-                ex.printStackTrace();
-            } catch (IOException ex) {
-                ex.printStackTrace();
+                    FacesContext instance = FacesContext.getCurrentInstance();
+                    instance.addMessage("mensagens", new FacesMessage(
+                            FacesMessage.SEVERITY_ERROR,
+                            fileName + " anexado com sucesso", null));
+
+                } catch (FileNotFoundException ex) {
+                    ex.printStackTrace();
+                } catch (IOException ex) {
+                    ex.printStackTrace();
+                }
             }
+        } catch (IOException e) {
+            e.printStackTrace();
         }
+
+
     }
 
     public void proximaEtapa(){
