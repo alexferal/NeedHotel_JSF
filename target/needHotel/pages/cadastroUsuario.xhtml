@@ -88,7 +88,9 @@
                             <i class="material-icons prefix">lock</i>
                             <h:outputLabel  for="confirmaSenha" value="Confirma Senha" autocomplete="false"/>
                             <h:inputSecret id="confirmaSenha" required="true" requiredMessage="Senha é obrigatório!"
-                                           value="#{cadastroBean.confirmaSenha}" validator="senhaValidator.confirmacao"/>
+                                           value="#{cadastroBean.confirmaSenha}" validatorMessage="Senha incompatível."
+                                            validator="senhaValidator.confirmacao">
+                            </h:inputSecret>
                             <h:message for="confirmaSenha" styleClass="red-text" />
                         </div>
                     </div>
