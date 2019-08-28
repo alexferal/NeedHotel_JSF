@@ -2,6 +2,7 @@ package com.needhotel.visao.mbeans;
 
 import com.needhotel.modelo.dao.implementacao.ImovelDaoImpl;
 import com.needhotel.modelo.domain.Imovel;
+import com.needhotel.modelo.domain.Usuario;
 import org.primefaces.component.fileupload.FileUpload;
 import org.primefaces.event.FileUploadEvent;
 import org.primefaces.model.UploadedFile;
@@ -10,6 +11,7 @@ import javax.annotation.PostConstruct;
 import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 
+import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.ViewScoped;
 
 import javax.faces.context.FacesContext;
@@ -36,6 +38,9 @@ public class CadastroImovel {
     private Imovel imovel;
     private ImovelDaoImpl imovelDao;
     private UploadedFile foto;
+
+    @ManagedProperty("#{loginBean}")
+    private LoginBean loginBean;
 
     @PostConstruct
     public void init() {

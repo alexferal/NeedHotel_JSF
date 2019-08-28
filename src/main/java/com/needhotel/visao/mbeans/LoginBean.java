@@ -4,8 +4,10 @@ package com.needhotel.visao.mbeans;
 import com.needhotel.modelo.dao.implementacao.UsuarioDaoImpl;
 import com.needhotel.modelo.domain.Usuario;
 
+import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
+import javax.faces.context.FacesContext;
 import javax.faces.view.facelets.Facelet;
 import javax.servlet.http.HttpSession;
 
@@ -16,18 +18,29 @@ public class LoginBean {
     private String email;
     private String senha;
 
-    private UsuarioDaoImpl usuarioDao = new UsuarioDaoImpl();
+    private Usuario usuarioLogado;
 
     public String login(){
-//        Usuario usuario = usuarioDao.autenticacao(email, senha);
-//
-//        if (usuario != null){
-//            HttpSession session = Facelet.getContext()
-//            return "pages/home.xhtml";
-//        }else {
-//            return "";
-//        }
-        return "home.xhtml";
+        UsuarioDaoImpl usuarioDao = new UsuarioDaoImpl();
+        this.usuarioLogado = usuarioDao.autenticacao(email, senha);
+        this.senha = null;
+
+        if (this.usuarioLogado == null) {
+            FacesMessage message = new FacesMessage("login ou senha inválidos", "informe um login e/ou senha válidos");
+            FacesContext.getCurrentInstance().addMessage(null, message);
+            return "";
+        }
+
+        return "goToHome";
+
+    }
+
+    public String logout() {
+//        this.email = null;
+//        this.usuarioLogado = null;
+        HttpSession session = (HttpSession)FacesContext.getCurrentInstance().getExternalContext().getSession(true);
+        session.invalidate();
+        return "goToLogin";
     }
 
     public String getEmail() {
@@ -44,5 +57,13 @@ public class LoginBean {
 
     public void setSenha(String senha) {
         this.senha = senha;
+    }
+
+    public Usuario getUsuarioLogado() {
+        return usuarioLogado;
+    }
+
+    public void setUsuarioLogado(Usuario usuarioLogado) {
+        this.usuarioLogado = usuarioLogado;
     }
 }
