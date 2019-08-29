@@ -11,4 +11,49 @@
             <var>msg</var>
         </resource-bundle>
     </application>
+    <lifecycle>
+        <phase-listener>com.needhotel.listener.AuthListener</phase-listener>
+    </lifecycle>
+
+    <navigation-rule>
+        <from-view-id>*</from-view-id>
+        <navigation-case>
+            <from-outcome>goToHome</from-outcome>
+            <to-view-id>/pages/home.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+
+    <navigation-rule>
+        <from-view-id>*</from-view-id>
+        <navigation-case>
+            <from-outcome>goToLogin</from-outcome>
+            <to-view-id>/pages/login.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+
+<!--    <navigation-rule>-->
+<!--        <from-view-id>/pages/cadastroUsuario.xhtml</from-view-id>-->
+<!--        <navigation-case>-->
+<!--            <from-outcome>cadastrar</from-outcome>-->
+<!--            <to-view-id>/pages/confirmacaoCadastro.xhtml</to-view-id>-->
+<!--        </navigation-case>-->
+<!--        <navigation-case>-->
+<!--            <from-outcome>erro</from-outcome>-->
+<!--            <to-view-id>/pages/erro-cadastro.xhtml</to-view-id>-->
+<!--        </navigation-case>-->
+<!--    </navigation-rule>-->
+
+<!--    <navigation-rule>-->
+<!--        <from-view-id>/pages/cadastroImovel.xhtml</from-view-id>-->
+<!--        <navigation-case>-->
+<!--            <from-outcome>cadastrar</from-outcome>-->
+<!--            <to-view-id>/pages/confirmacaoCadastroImovel.xhtml</to-view-id>-->
+<!--        </navigation-case>-->
+<!--        <navigation-case>-->
+<!--            <from-outcome>erro</from-outcome>-->
+<!--            <to-view-id>/pages/erro-cadastro-imovel.xhtml</to-view-id>-->
+<!--        </navigation-case>-->
+<!--    </navigation-rule>-->
+
+
 </faces-config>
