@@ -161,8 +161,6 @@ public class CadastroImovel {
         } catch (IOException e) {
             e.printStackTrace();
         }
-
-
     }
 
     public void proximaEtapa(){

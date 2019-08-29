@@ -1,15 +1,94 @@
-<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:p="http://primefaces.org/ui">
-    <p:sidebar widgetVar="sb">
-        <h1>Sidebar</h1>
-        <p:commandLink styleClass="pi pi-user" style="width: 100%; color: black;" value="Perfil"/>
-        <p:commandLink styleClass="pi pi-list" style="width: 100%; color: black;" value="Imóveis"/>
-        <p:separator/>
-        <p:commandLink styleClass="pi pi-home" style="width: 100%; color: black;" value="Home"/>
-        <p:commandLink styleClass="pi pi-info" style="width: 100%; color: black;" value="Sobre"/>
-        <p:commandLink styleClass="pi pi-sign-out" style="width: 100%; color: black;" value="Logout"/>
-    </p:sidebar>
-    <div style="width: 100%; margin: 0px; background-color: black">
-        <p:commandLink style="font-size: 2.5em !important;" styleClass="pi pi-bars" value="" onclick="PF('sb').show()" />
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:p="http://primefaces.org/ui"
+                xmlns:h="http://java.sun.com/jsf/html" >
+    <div style="position: absolute; z-index: 999;">
+        <a href="#" data-target="slide-out" class="sidenav-trigger">
+            <i class="medium material-icons white-text">menu</i>
+        </a>
+        <ul id="slide-out" class="sidenav">
+            <li>
+                <div class="user-view">
+                    <div class="background grey darken-3">
+                        <img src="imagem/background.jpg"/>
+                    </div>
+                    <h:form>
 
+                    </h:form>
+                    <p:commandLink action="#{menuBean.goProfile()}">
+                        <img class="circle" src="../assest/imagens/#{menuBean.usuario.fotoPerfil}"/>
+                    </p:commandLink>
+                    <p:commandLink action="#{menuBean.goProfile()}">
+                    <span class="white-text name userNome">
+                        <h:outputText value="#{menuBean.usuario.nome}"/>
+                        <h:outputText value="#{menuBean.usuario.sobreNome}"/>
+                    </span>
+                    </p:commandLink>
+                    <p:commandLink styleClass="white-text email" action="#{menuBean.goProfile()}" value="#{menuBean.usuario.email}"/>
+                </div>
+            </li>
+            <li>
+                <i class="material-icons black-text">account_circle</i><h:commandLink action="#{menuBean.goProfile()}" styleClass="no-padding" value="Perfil"/>
+            </li>
+
+            <li>
+                <ul class="collapsible collapsible-accordion">
+                    <li>
+                        <i class="material-icons black-text">location_city</i><h:outputText styleClass="collapsible-header no-padding" value="Imóveis"/>
+                        <div class="collapsible-body">
+                            <ul>
+                                <li>
+                                    <i class="material-icons black-text">add_circle</i><h:commandLink styleClass="material-icons black-text" value="Cadastrar Imóvel" action="#{menuBean.goFormImovel()}"/>
+                                </li>
+                                <li>
+                                    <i class="material-icons black-text">view_module</i><h:commandLink styleClass="material-icons black-text" value="Gerenciar Meus Imóveis" action="#{menuBean.goManegerImovel()}"/>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </li>
+
+            <li>
+                <i class="material-icons black-text">exit_to_app</i>
+                <h:commandLink styleClass="no-padding" action="#{menuBean.loginBean.logout()}" value="Logout"/>
+            </li>
+            <li><p:separator/></li>
+            <li>
+                <i class="material-icons black-text">home</i>
+                <h:commandLink styleClass="no-padding" value="Home" action="#{menuBean.goHome()}"/>
+            </li>
+            <li>
+                <i class="material-icons black-text">info</i>
+                <h:commandLink value="Sobre" action="#{menuBean.goAbout}" styleClass="no-padding"/>
+            </li>
+        </ul>
     </div>
+    <nav>
+        <div class="nav-wrapper black">
+            <a href="#" class="brand-logo center">Need Hotel</a>
+        </div>
+    </nav>
+    <script>
+        $(document).ready(function(){
+            $('.sidenav').sidenav();
+        });
+    </script>
+    <script>
+        $(document).ready(function(){
+            $('.collapsible').collapsible();
+        });
+    </script>
+
+<!--    <p:sidebar widgetVar="sb">-->
+<!--        <h1>Sidebar</h1>-->
+<!--        <p:commandLink styleClass="pi pi-user" style="width: 100%; color: black;" value="Perfil"/>-->
+<!--        <p:commandLink styleClass="pi pi-list" style="width: 100%; color: black;" value="Imóveis"/>-->
+<!--        <p:separator/>-->
+<!--        <p:commandLink styleClass="pi pi-home" style="width: 100%; color: black;" value="Home"/>-->
+<!--        <p:commandLink styleClass="pi pi-info" style="width: 100%; color: black;" value="Sobre"/>-->
+<!--        <p:commandLink styleClass="pi pi-sign-out" style="width: 100%; color: black;" value="Logout"/>-->
+<!--    </p:sidebar>-->
+<!--    <div style="width: 100%; margin: 0px; background-color: black">-->
+<!--        <p:commandLink style="font-size: 2.5em !important;" styleClass="pi pi-bars" value="" onclick="PF('sb').show()" />-->
+
+<!--    </div>-->
 </ui:composition>
