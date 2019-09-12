@@ -43,7 +43,7 @@
         <param-value>commons</param-value>
     </context-param>
   <welcome-file-list>
-    <welcome-file>pages/cadastroImovel.jsf</welcome-file>
+    <welcome-file>pages/home.jsf</welcome-file>
   </welcome-file-list>
 
 

@@ -1,6 +1,8 @@
 package com.needhotel.visao.mbeans;
 
 import com.needhotel.modelo.dao.implementacao.ImovelDaoImpl;
+import com.needhotel.modelo.dao.implementacao.NovidadesDaoImpl;
+import com.needhotel.modelo.dao.interfaces.NovidadesDao;
 import com.needhotel.modelo.domain.Imovel;
 import com.needhotel.modelo.domain.Usuario;
 import org.primefaces.component.fileupload.FileUpload;
@@ -22,6 +24,7 @@ import javax.servlet.ServletContext;
 import java.io.*;
 import java.time.ZonedDateTime;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Properties;
 
@@ -37,14 +40,16 @@ public class CadastroImovel {
     private List<String> comodidades;
     private Imovel imovel;
     private ImovelDaoImpl imovelDao;
+    private NovidadesDaoImpl novidadesDao;
     private UploadedFile foto;
 
-    @ManagedProperty("#{loginBean}")
-    private LoginBean loginBean;
+//    @ManagedProperty("#{loginBean}")
+//    private LoginBean loginBean;
 
     @PostConstruct
     public void init() {
         imovel = new Imovel();
+        novidadesDao = new NovidadesDaoImpl();
         imovelDao = new ImovelDaoImpl();
         SelectItemGroup g1 = new SelectItemGroup("Norte");
         g1.setSelectItems(new SelectItem[] {
@@ -108,8 +113,10 @@ public class CadastroImovel {
             FacesMessage message = new FacesMessage("Envio de um arquivo requerido", "Envie ao menos um arquivo");
             FacesContext.getCurrentInstance().addMessage("foto", message);
         } else {
+            imovel.setComodidades(Arrays.asList(comodidadesSelecionadas));
             upload();
             imovelDao.cadastrarImovel(imovel);
+            novidadesDao.salvarImovel(imovel);
             cadastrarComodidades();
         }
     }

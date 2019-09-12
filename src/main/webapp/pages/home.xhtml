@@ -16,5 +16,20 @@
                 <p:commandButton action="#{buscaBean.buscaImoveis}" style="width: 100px; height: 43px" icon="pi pi-search"></p:commandButton>
             </h:form>
             </div>
+        <div class="divider"></div>
+
+        <p:carousel value="#{carouselView.cars}" headerText="Responsive" var="Imovel" itemStyle="text-align:center" responsive="true">
+            <p:panelGrid style="width:100%;margin:10px 0px" columnClasses="label,value" layout="grid" styleClass="ui-panelgrid-blank">
+                <f:facet name="header">
+                    <p:graphicImage name="demo/images/car/#{car.brand}.gif"/>
+                </f:facet>
+            </p:panelGrid>
+
+            <f:facet name="footer">
+                In total there are #{fn:length(carouselView.cars)} cars.
+            </f:facet>
+        </p:carousel>
+
+
     </ui:define>
 </ui:composition>
