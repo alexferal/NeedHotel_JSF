@@ -17,18 +17,15 @@ public class ImovelBean {
     public Imovel imovel;
     public Reserva reserva;
     public String lngLat;
+    public String idImovel;
 
     @PostConstruct
     public void init(){
-        imovel = new Imovel();
-        imovel.setNome("Nome do Imovel");
-        imovel.setDescricao("Descrevendo o imovel.");
-        lngLat = "-6.8897403, -38.5447445";
-        List<String> comodidadesTeste = new ArrayList<>();
-        comodidadesTeste.add("Comodidade1");
-        comodidadesTeste.add("Comodidade2");
-        comodidadesTeste.add("Comodidade3");
-        imovel.setComodidades(comodidadesTeste);
+
+    }
+
+    public void escrever(){
+        System.out.println("afadasdsd");
     }
 
     public Imovel getImovel() {
@@ -45,5 +42,13 @@ public class ImovelBean {
 
     public void setLngLat(String lngLat) {
         this.lngLat = lngLat;
+    }
+
+    public String getIdImovel() {
+        return idImovel;
+    }
+
+    public void setIdImovel(String idImovel) {
+        this.idImovel = idImovel;
     }
 }

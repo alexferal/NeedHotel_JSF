@@ -4,7 +4,6 @@
                 xmlns:f="http://xmlns.jcp.org/jsf/core"
                 xmlns:p="http://primefaces.org/ui"
                 template="../WEB-INF/layout.xhtml">
-    <ui:define name="menu"></ui:define>
     <ui:define name="principal">
         <div class="row container " style="margin-top: 30px" >
             <h:form StyleClass="col s6 white row">
@@ -14,7 +13,6 @@
         </div>
         <div class="divider"></div>
         <p:repeat value="#{buscaBean.imovelList}" var="imovel">
-            <h3 class="center white-text">Resultados</h3>
             <div class="col s9 m7">
                 <div class="card horizontal z-depth-4">
                     <div class="card-image">
@@ -28,7 +26,9 @@
                             <p>Valor da Diária - R$:${imovel.valor}</p>
                         </div>
                         <div class="card-action">
-                            <a href="perfilImovel?id=${imovel.id}" class="btn-floating waves-effect waves-light black" style="float: right"><i class="material-icons">navigate_next</i></a>
+                            <h:form>
+                                <h:commandButton update="@form" action="#{imovelBean.escrever}" value="Ver mais"  class="waves-effect waves-light" style="float: right"/>
+                            </h:form>
                         </div>
                     </div>
                 </div>
