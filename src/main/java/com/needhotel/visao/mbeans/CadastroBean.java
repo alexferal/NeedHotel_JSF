@@ -48,7 +48,7 @@ public class CadastroBean {
     }
 
     public String finalizarCadastro(){
-        //TODO: código de salvar dados do usuário no BD
+        usuarioDao.cadastrarUsuario(usuario);
         return "login.xhtml";
     }
 
