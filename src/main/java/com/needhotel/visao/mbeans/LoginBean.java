@@ -8,7 +8,6 @@ import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 import javax.faces.context.FacesContext;
-import javax.faces.view.facelets.Facelet;
 import javax.servlet.http.HttpSession;
 
 @ManagedBean
@@ -22,24 +21,18 @@ public class LoginBean {
 
     public String login(){
         UsuarioDaoImpl usuarioDao = new UsuarioDaoImpl();
-        System.out.println(usuarioDao.autenticacao(email, senha).toString());
         this.usuarioLogado = usuarioDao.autenticacao(email, senha);
         this.senha = null;
-
         if (this.usuarioLogado == null) {
-
             FacesMessage message = new FacesMessage("login ou senha inválidos", "informe um login e/ou senha válidos");
             FacesContext.getCurrentInstance().addMessage(null, message);
             return "";
         }
-
-        return "goToHome";
+        return "home.xhtml";
 
     }
 
     public String logout() {
-//        this.email = null;
-//        this.usuarioLogado = null;
         HttpSession session = (HttpSession)FacesContext.getCurrentInstance().getExternalContext().getSession(true);
         session.invalidate();
         return "goToLogin";

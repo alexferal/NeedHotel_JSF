@@ -5,9 +5,12 @@ import com.needhotel.modelo.domain.Usuario;
 import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
+import javax.faces.bean.ViewScoped;
 
+@ViewScoped
 @ManagedBean
-public class MenuBean {
+public class PerfilBean {
+
     public Usuario usuario;
 
     @ManagedProperty("#{loginBean}")
@@ -16,26 +19,6 @@ public class MenuBean {
     @PostConstruct
     public void init(){
         usuario = loginBean.getUsuarioLogado();
-    }
-
-    public String goProfile(){
-        return "goToProfile";
-    }
-
-    public String goFormImovel(){
-        return "cadastroImovel.xhtml";
-    }
-
-    public String goManegerImovel(){
-        return "gerenciamentoImovel.xhtml";
-    }
-
-    public String goHome(){
-        return "home.xhtml";
-    }
-
-    public String goAbout(){
-        return "sobre.xhtml";
     }
 
     public Usuario getUsuario() {

@@ -18,12 +18,10 @@
     <navigation-rule>
         <from-view-id>*</from-view-id>
         <navigation-case>
-            <from-action>#{menuBean.goHome}</from-action>
             <from-outcome>goPage</from-outcome>
             <to-view-id>/pages/home.xhtml</to-view-id>
         </navigation-case>
         <navigation-case>
-            <from-action>#{menuBean.goProfile}</from-action>
             <from-outcome>goToProfile</from-outcome>
             <to-view-id>/pages/perfil.xhtml</to-view-id>
         </navigation-case>

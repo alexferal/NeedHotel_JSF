@@ -7,28 +7,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="969171ad-1e2a-4970-b862-6adea088320d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/assets/imagens/background.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/assets/imagens/teste.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/needHotel/assets/imagens/background.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/needHotel/assets/imagens/teste.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/needhotel/visao/mbeans/PerfilBean.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/script/script_bd.sql" beforeDir="false" afterPath="$PROJECT_DIR$/script/script_bd.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/needhotel/listener/AuthListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/needhotel/listener/AuthListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/needhotel/modelo/dao/implementacao/ReservaDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/needhotel/modelo/dao/implementacao/ReservaDAOImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/needhotel/modelo/domain/Cartao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/needhotel/modelo/domain/Cartao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/needhotel/modelo/domain/Pagamento.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/needhotel/modelo/domain/Pagamento.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/needhotel/modelo/domain/Reserva.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/needhotel/modelo/domain/Reserva.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/needhotel/visao/mbeans/CadastroImovel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/needhotel/visao/mbeans/CadastroImovel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/needhotel/visao/mbeans/HomeBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/needhotel/visao/mbeans/HomeBean.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/needhotel/visao/mbeans/LoginBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/needhotel/visao/mbeans/LoginBean.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/needhotel/visao/mbeans/MenuBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/needhotel/visao/mbeans/MenuBean.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/faces-config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/faces-config.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/menu.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/menu.xhtml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/needHotel/WEB-INF/faces-config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/needHotel/WEB-INF/faces-config.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/needHotel/WEB-INF/menu.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/target/needHotel/WEB-INF/menu.xhtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/pages/home.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/pages/home.xhtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/pages/perfil.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/pages/perfil.xhtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/needHotel/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/target/needHotel/META-INF/MANIFEST.MF" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/needHotel/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/needHotel/WEB-INF/web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/needHotel/pages/home.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/target/needHotel/pages/home.xhtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/needHotel/pages/imovel.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/target/needHotel/pages/imovel.xhtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/needHotel/pages/perfil.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/target/needHotel/pages/perfil.xhtml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -226,7 +216,7 @@
       <workItem from="1565956630496" duration="596000" />
       <workItem from="1567083515766" duration="7250000" />
       <workItem from="1568287233057" duration="10915000" />
-      <workItem from="1568374396911" duration="8820000" />
+      <workItem from="1568374396911" duration="11247000" />
     </task>
     <servers />
   </component>
