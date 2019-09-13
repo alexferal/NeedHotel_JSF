@@ -1,6 +1,7 @@
 package com.needhotel.visao.mbeans;
 
 import com.needhotel.modelo.domain.Imovel;
+import com.needhotel.modelo.domain.Reserva;
 import com.needhotel.modelo.domain.Usuario;
 
 import javax.annotation.PostConstruct;
@@ -14,6 +15,7 @@ import java.util.List;
 public class ImovelBean {
 
     public Imovel imovel;
+    public Reserva reserva;
     public String lngLat;
 
     @PostConstruct
