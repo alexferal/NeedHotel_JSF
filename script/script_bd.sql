@@ -49,3 +49,36 @@ CREATE TABLE foto(
        REFERENCES imovel(id)
 
 );
+
+CREATE TABLE cartao(
+	numero VARCHAR(20),
+	titular VARCHAR(100),
+	cvv VARCHAR(3),
+	datavalidade VARCHAR(5),
+	CONSTRAINT numerocartao_pk PRIMARY KEY(numero)
+);
+
+CREATE TABLE pagamento(
+	codigo VARCHAR(20),
+	datapagamento DATE,
+	cartao VARCHAR(20),
+	CONSTRAINT codigopagamento_pk PRIMARY KEY(codigo),
+    CONSTRAINT cartao_fk FOREIGN KEY(cartao)
+        REFERENCES cartao(numero)
+);
+
+CREATE TABLE reserva(
+	codigo VARCHAR(20),
+	checkin DATE,
+	checkout DATE,
+	usuario VARCHAR(14),
+	imovel VARCHAR(100),
+	codpagamento VARCHAR(20),
+	CONSTRAINT codigoreserva_pk PRIMARY KEY(codigo),
+    CONSTRAINT codpagamento_fk FOREIGN KEY(codpagamento)
+        REFERENCES pagamento(codigo),
+	CONSTRAINT usuario_fk FOREIGN KEY(usuario)
+        REFERENCES usuario(cpf),
+	CONSTRAINT imovel_fk FOREIGN KEY(imovel)
+        REFERENCES imovel(id)
+);

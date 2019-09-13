@@ -22,10 +22,12 @@ public class LoginBean {
 
     public String login(){
         UsuarioDaoImpl usuarioDao = new UsuarioDaoImpl();
+        System.out.println(usuarioDao.autenticacao(email, senha).toString());
         this.usuarioLogado = usuarioDao.autenticacao(email, senha);
         this.senha = null;
 
         if (this.usuarioLogado == null) {
+
             FacesMessage message = new FacesMessage("login ou senha inválidos", "informe um login e/ou senha válidos");
             FacesContext.getCurrentInstance().addMessage(null, message);
             return "";

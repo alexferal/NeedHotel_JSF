@@ -28,7 +28,7 @@ public class HomeBean {
         return images;
     }
 
-    public List<Imovel> buscarNovidades(){
-
-    }
+//    public List<Imovel> buscarNovidades(){
+//
+//    }
 }

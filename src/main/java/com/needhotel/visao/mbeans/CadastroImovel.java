@@ -34,7 +34,8 @@ public class CadastroImovel {
     public enum EtapaCadastro{
         ETAPA1, ETAPA2
     };
-    private  EtapaCadastro etapaCadastro = EtapaCadastro.ETAPA1;
+
+    private EtapaCadastro etapaCadastro = EtapaCadastro.ETAPA1;
     private List<SelectItem> estados;
     private String[] comodidadesSelecionadas;
     private List<String> comodidades;

@@ -3,12 +3,10 @@ package com.needhotel.listener;
 import com.needhotel.visao.mbeans.LoginBean;
 
 import javax.faces.application.NavigationHandler;
-import javax.faces.bean.ManagedProperty;
 import javax.faces.event.PhaseEvent;
 import javax.faces.event.PhaseId;
 import javax.faces.event.PhaseListener;
 import java.util.Arrays;
-import java.util.stream.Stream;
 
 public class AuthListener implements PhaseListener {
 
@@ -20,7 +18,7 @@ public class AuthListener implements PhaseListener {
     @Override
     public void afterPhase(PhaseEvent event) {
 
-        String[] paginasRestritas = {"/pages/usuario.xhtml", "/pages/home.xhtml", };
+        String[] paginasRestritas = {"/pages/usuario.xhtml" };
 
         LoginBean loginBean = (LoginBean)event.getFacesContext()
                 .getExternalContext().getSessionMap().get("loginBean");

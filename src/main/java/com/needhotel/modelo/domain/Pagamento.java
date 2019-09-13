@@ -1,13 +1,21 @@
 package com.needhotel.modelo.domain;
 
 import java.time.LocalDate;
+import java.time.ZonedDateTime;
 
 public class Pagamento {
+    private String codigo;
     private LocalDate dataPagamento;
     private Cartao cartao;
 
-    public Pagamento(LocalDate dataPagamento, Cartao cartao) {
-        this.dataPagamento = dataPagamento;
+    public Pagamento(){
+        this.codigo = String.valueOf(ZonedDateTime.now().toInstant().getEpochSecond());
+        this.dataPagamento = LocalDate.now();
+    }
+
+    public Pagamento(Cartao cartao) {
+        this.codigo = String.valueOf(ZonedDateTime.now().toInstant().getEpochSecond());
+        this.dataPagamento = LocalDate.now();
         this.cartao = cartao;
     }
 
@@ -25,5 +33,13 @@ public class Pagamento {
 
     public void setCartao(Cartao cartao) {
         this.cartao = cartao;
+    }
+
+    public String getCodigo() {
+        return codigo;
+    }
+
+    public void setCodigo(String codigo) {
+        this.codigo = codigo;
     }
 }

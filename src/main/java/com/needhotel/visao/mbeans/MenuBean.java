@@ -19,23 +19,23 @@ public class MenuBean {
     }
 
     public String goProfile(){
-        return "perfil.xhtml";
+        return "/pages/perfil.xhtml";
     }
 
     public String goFormImovel(){
-        return "cadastroImovel.xhtml";
+        return "/pages/cadastroImovel.xhtml";
     }
 
     public String goManegerImovel(){
-        return "gerenciamentoImovel.xhtml";
+        return "/pages/gerenciamentoImovel.xhtml";
     }
 
     public String goHome(){
-        return "home.xhtml";
+        return "/pages/home.xhtml";
     }
 
     public String goAbout(){
-        return "sobre.xhtml";
+        return "/pages/sobre.xhtml";
     }
 
     public Usuario getUsuario() {

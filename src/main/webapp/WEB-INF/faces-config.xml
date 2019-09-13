@@ -18,8 +18,30 @@
     <navigation-rule>
         <from-view-id>*</from-view-id>
         <navigation-case>
-            <from-outcome>goToHome</from-outcome>
+            <from-action>#{menuBean.goHome}</from-action>
+            <from-outcome>goPage</from-outcome>
             <to-view-id>/pages/home.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-action>#{menuBean.goProfile}</from-action>
+            <from-outcome>goToProfile</from-outcome>
+            <to-view-id>/pages/perfil.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>goToAbout</from-outcome>
+            <to-view-id>/pages/sobre.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>goToSearch</from-outcome>
+            <to-view-id>/pages/buscaImovel.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>goToFormImmobile</from-outcome>
+            <to-view-id>/pages/cadastroImovel.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>goToViewImmobile</from-outcome>
+            <to-view-id>/pages/gerenciamentoImovel.xhtml</to-view-id>
         </navigation-case>
     </navigation-rule>
 

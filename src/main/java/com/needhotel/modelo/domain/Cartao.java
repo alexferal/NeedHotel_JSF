@@ -6,6 +6,10 @@ public class Cartao {
     private String cvv;
     private String dataValidade;
 
+    public Cartao(){
+
+    }
+
     public Cartao(String numeroCartao, String titular, String cvv, String dataValidade) {
         this.numeroCartao = numeroCartao;
         this.titular = titular;

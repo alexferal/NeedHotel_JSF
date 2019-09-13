@@ -1,6 +1,7 @@
 package com.needhotel.modelo.domain;
 
 import java.time.LocalDate;
+import java.time.ZonedDateTime;
 
 public class Reserva {
 
@@ -11,8 +12,12 @@ public class Reserva {
     private String imovel;
     private Pagamento pagamento;
 
-    public Reserva(String codigo, LocalDate checkIn, LocalDate checkOut, String usuario, String imovel, Pagamento pagamento) {
-        this.codigo = codigo;
+    public Reserva(){
+        this.codigo = String.valueOf(ZonedDateTime.now().toInstant().getEpochSecond());
+    }
+
+    public Reserva(LocalDate checkIn, LocalDate checkOut, String usuario, String imovel, Pagamento pagamento) {
+        this.codigo = String.valueOf(ZonedDateTime.now().toInstant().getEpochSecond());
         this.checkIn = checkIn;
         this.checkOut = checkOut;
         this.usuario = usuario;

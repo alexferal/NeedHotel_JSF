@@ -4,62 +4,78 @@
         <a href="#" data-target="slide-out" class="sidenav-trigger">
             <i class="medium material-icons white-text">menu</i>
         </a>
-        <ul id="slide-out" class="sidenav">
-            <li>
-                <div class="user-view">
-                    <div class="background grey darken-3">
-                        <img src="imagem/background.jpg"/>
-                    </div>
-                    <h:form>
 
-                    </h:form>
-                    <p:commandLink action="#{menuBean.goProfile()}">
-                        <img class="circle" src="../assest/imagens/#{menuBean.usuario.fotoPerfil}"/>
-                    </p:commandLink>
-                    <p:commandLink action="#{menuBean.goProfile()}">
+        <ul id="slide-out" class="sidenav">
+            <h:form>
+                <li>
+                    <div class="user-view">
+                        <div class="background grey darken-3">
+                            <img src="../assets/imagens/background.jpg"/>
+                        </div>
+
+                        <p:commandLink action="#{menuBean.goProfile()}">
+                            <img class="circle" src="../assets/imagens/#{menuBean.usuario.fotoPerfil}"/>
+                        </p:commandLink>
+                        <p:commandLink action="#{menuBean.goProfile()}">
                     <span class="white-text name userNome">
                         <h:outputText value="#{menuBean.usuario.nome}"/>
                         <h:outputText value="#{menuBean.usuario.sobreNome}"/>
                     </span>
+                        </p:commandLink>
+                        <p:commandLink styleClass="white-text email" action="#{menuBean.goProfile()}" value="#{menuBean.usuario.email}"/>
+                    </div>
+                </li>
+
+                <li>
+                    <p:commandLink action="#{menuBean.goProfile()}" styleClass="no-padding" value="Perfil">
+                        <i class="material-icons black-text prefix">account_circle</i>
                     </p:commandLink>
-                    <p:commandLink styleClass="white-text email" action="#{menuBean.goProfile()}" value="#{menuBean.usuario.email}"/>
-                </div>
-            </li>
-            <li>
-                <i class="material-icons black-text">account_circle</i><h:commandLink action="#{menuBean.goProfile()}" styleClass="no-padding" value="Perfil"/>
-            </li>
+                </li>
 
-            <li>
-                <ul class="collapsible collapsible-accordion">
-                    <li>
-                        <i class="material-icons black-text">location_city</i><h:outputText styleClass="collapsible-header no-padding" value="Imóveis"/>
-                        <div class="collapsible-body">
-                            <ul>
-                                <li>
-                                    <i class="material-icons black-text">add_circle</i><h:commandLink styleClass="material-icons black-text" value="Cadastrar Imóvel" action="#{menuBean.goFormImovel()}"/>
-                                </li>
-                                <li>
-                                    <i class="material-icons black-text">view_module</i><h:commandLink styleClass="material-icons black-text" value="Gerenciar Meus Imóveis" action="#{menuBean.goManegerImovel()}"/>
-                                </li>
-                            </ul>
-                        </div>
-                    </li>
-                </ul>
-            </li>
+                <li>
+                    <ul class="collapsible collapsible-accordion">
+                        <li>
+                            <i class="material-icons black-text prefix left" style="margin-top: 10px;">location_city</i>
+                            <h:outputText styleClass="collapsible-header" value="Imóveis"/>
+                            <div class="collapsible-body">
+                                <ul>
+                                    <li>
+                                        <p:commandLink styleClass="material-icons black-text" value="Cadastrar Imóvel"
+                                                       action="#{menuBean.goFormImovel()}">
+                                            <i class="material-icons black-text prefix">add_circle</i>
+                                        </p:commandLink>
+                                    </li>
+                                    <li>
+                                        <p:commandLink styleClass="material-icons black-text" value="Gerenciar Meus Imóveis"
+                                                       action="#{menuBean.goManegerImovel()}">
+                                            <i class="material-icons black-text prefix">view_module</i>
+                                        </p:commandLink>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </li>
 
-            <li>
-                <i class="material-icons black-text">exit_to_app</i>
-                <h:commandLink styleClass="no-padding" action="#{menuBean.loginBean.logout()}" value="Logout"/>
-            </li>
-            <li><p:separator/></li>
-            <li>
-                <i class="material-icons black-text">home</i>
-                <h:commandLink styleClass="no-padding" value="Home" action="#{menuBean.goHome()}"/>
-            </li>
-            <li>
-                <i class="material-icons black-text">info</i>
-                <h:commandLink value="Sobre" action="#{menuBean.goAbout}" styleClass="no-padding"/>
-            </li>
+                <li>
+                    <p:commandLink styleClass="no-padding" action="#{menuBean.loginBean.logout()}" value="Logout">
+                        <i class="material-icons black-text prefix">exit_to_app</i>
+                    </p:commandLink>
+                </li>
+                <li><p:separator/></li>
+                <li>
+                    <p:commandLink styleClass="no-padding" value="Home" action="#{menuBean.goHome()}">
+                        <i class="material-icons black-text prefix">home</i>
+                    </p:commandLink>
+                </li>
+                <li>
+                    <p:commandLink value="Sobre" action="#{menuBean.goAbout}" styleClass="no-padding">
+                        <i class="material-icons black-text prefix">info</i>
+                    </p:commandLink>
+                </li>
+
+            </h:form>
+
         </ul>
     </div>
     <nav>
