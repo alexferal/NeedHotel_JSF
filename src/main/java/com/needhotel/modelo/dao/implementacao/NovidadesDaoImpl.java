@@ -5,6 +5,11 @@ import com.needhotel.modelo.dao.interfaces.NovidadesDao;
 import com.needhotel.modelo.domain.Imovel;
 import redis.clients.jedis.Jedis;
 
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Set;
+
 public class NovidadesDaoImpl implements NovidadesDao {
 
     private Jedis jedis;
@@ -22,7 +27,16 @@ public class NovidadesDaoImpl implements NovidadesDao {
     }
 
     @Override
-    public Imovel buscar(String id) {
-        return null;
+    public List<Imovel> buscarImoveis() {
+        List<Imovel> imovelList = new ArrayList<>();
+        Set<String> imoveis = jedis.keys("*");
+        Iterator<String> im = imoveis.iterator();
+
+        while (im.hasNext()){
+            String imovelJson = im.next();
+            Imovel imovel = gson.fromJson(imovelJson, Imovel.class);
+            imovelList.add(imovel);
+        }
+        return imovelList;
     }
 }

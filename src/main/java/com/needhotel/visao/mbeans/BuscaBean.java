@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @ManagedBean
-public class BuscaBean {
+public class  BuscaBean {
     private ImovelDaoImpl imovelDao;
     private List<Imovel> imovelList;
     private String busca;

@@ -2,8 +2,10 @@ package com.needhotel.modelo.dao.interfaces;
 
 import com.needhotel.modelo.domain.Imovel;
 
+import java.util.List;
+
 public interface NovidadesDao {
 
      void salvarImovel(Imovel imovel);
-     Imovel buscar(String id);
+     List<Imovel> buscarImoveis();
 }
