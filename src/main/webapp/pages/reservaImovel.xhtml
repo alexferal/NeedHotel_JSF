@@ -1,0 +1,65 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:f="http://xmlns.jcp.org/jsf/core"
+                xmlns:p="http://primefaces.org/ui"
+                template="../WEB-INF/layout.xhtml">
+    <ui:define name="principal">
+        <div  class="container white row" style="margin-top: 15px; padding: 15px; border-radius: 15px;">
+            <h:form>
+                <h4>Fazer Reserva</h4>
+                <div class="divider"></div>
+                <div class="input-field col s12" >
+                    <i class="material-icons prefix">today</i>
+                    <h:outputLabel for="dataCheckin">Data de Check-in</h:outputLabel>
+                    <p:inputMask id="dataCheckin" requiredMessage="Data de Check-in é obrigatório"
+                                 value="#{reservaBean.reserva.checkIn}" mask="99/99/9999">
+                        <f:converter converterId="localDateTimeConverter" />
+                    </p:inputMask>
+                    <h:message for="dataCheckin" styleClass="red-text"/>
+                </div>
+                <div class="input-field col s12" >
+                    <i class="material-icons prefix">today</i>
+                    <h:outputLabel for="dataCheckout">Data de Check-out</h:outputLabel>
+                    <p:inputMask id="dataCheckout" requiredMessage="Data de Check-out é obrigatório"
+                                 value="#{reservaBean.reserva.checkOut}" mask="99/99/9999">
+                        <f:converter converterId="localDateTimeConverter" />
+                    </p:inputMask>
+                    <h:message for="dataCheckout" styleClass="red-text"/>
+                </div>
+                <div class="divider"></div>
+                <h4>Cartão</h4>
+                <div class="divider"></div>
+                <div class="input-field col s12" >
+                    <h:outputLabel for="numCartao">Número cartão</h:outputLabel>
+                    <p:inputMask id="numCartao" requiredMessage="Número do cartao é obrigatório"
+                                 value="#{reservaBean.cartao.numeroCartao}" mask="9999 9999 9999 9999"/>
+                    <h:message for="numCartao" styleClass="red-text"/>
+                </div>
+                <div class="input-field col s12" >
+                    <h:outputLabel for="nomeTitular">Nome do Titular</h:outputLabel>
+                    <p:inputText id="nomeTitular" requiredMessage="Nome do Titular é obrigatório"
+                                 value="#{reservaBean.cartao.titular}" />
+                    <h:message for="nomeTitular" styleClass="red-text"/>
+                </div>
+                <div class="input-field col s6" >
+                    <h:outputLabel for="cvv">CVV</h:outputLabel>
+                    <p:inputMask id="cvv" requiredMessage="CVV é obrigatório"
+                                 value="#{reservaBean.cartao.cvv}" mask="999"/>
+                    <h:message for="cvv" styleClass="red-text"/>
+                </div>
+                <div class="input-field col s6" >
+                    <h:outputLabel for="dataValidade">Data de Validade</h:outputLabel>
+                    <p:inputMask id="dataValidade" requiredMessage="Data de Validade é obrigatório"
+                                 value="#{reservaBean.cartao.dataValidade}" mask="99/99"/>
+                    <h:message for="dataValidade" styleClass="red-text"/>
+                </div>
+                <div class="col s12 center">
+                    <a class="btn" href="imovel.jsf?imovelid=#{reservaBean.idImovel}">voltar</a>
+                    <p:commandButton styleClass="btn" action="#{reservaBean.fazerReserva()}" value="Concluir"/>
+                </div>
+            </h:form>
+        </div>
+
+    </ui:define>
+</ui:composition>

@@ -51,6 +51,14 @@
         </navigation-case>
     </navigation-rule>
 
+    <navigation-rule>
+        <from-view-id>*</from-view-id>
+        <navigation-case>
+            <from-outcome>goToImovel</from-outcome>
+            <to-view-id>/pages/imovel.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+
 <!--    <navigation-rule>-->
 <!--        <from-view-id>/pages/cadastroUsuario.xhtml</from-view-id>-->
 <!--        <navigation-case>-->

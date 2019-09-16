@@ -1,7 +1,10 @@
 package com.needhotel.modelo.domain;
 
+import org.bson.Document;
+
 import java.time.LocalDate;
 import java.time.ZonedDateTime;
+import java.util.List;
 
 public class Pagamento {
     private String codigo;
@@ -41,5 +44,14 @@ public class Pagamento {
 
     public void setCodigo(String codigo) {
         this.codigo = codigo;
+    }
+
+    @Override
+    public String toString() {
+        return "Pagamento{" +
+                "codigo='" + codigo + '\'' +
+                ", dataPagamento=" + dataPagamento +
+                ", cartao=" + cartao +
+                '}';
     }
 }

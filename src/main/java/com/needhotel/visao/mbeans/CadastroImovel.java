@@ -133,41 +133,33 @@ public class CadastroImovel {
     }
 
     private void upload(){
+        ServletContext servletContext = (ServletContext) FacesContext.getCurrentInstance().getExternalContext().getContext();
 
-        InputStream inputStream = Thread.currentThread().getContextClassLoader().getResourceAsStream("config.properties");
-        Properties properties = new Properties();
-        try {
-            properties.load(inputStream);
-            String uploadPath = properties.getProperty("upload.dir") + File.separator + "imagens" + File.separator;
+        if (foto != null){
+            String uploadPath =  servletContext.getRealPath("") + "assets/imagens" + File.separator;
+            File uploadDir = new File(uploadPath);
+            if (!uploadDir.exists())
+                uploadDir.mkdir();
 
-            if (foto != null){
-                File uploadDir = new File(uploadPath);
-                if (!uploadDir.exists())
-                    uploadDir.mkdir();
+            String fileName = foto.getFileName();
+            String nomeFoto = "imovel-" + ZonedDateTime.now().toInstant().getEpochSecond() + fileName.substring(fileName.indexOf('.'));
+            File file = new File(uploadPath + nomeFoto);
+            try {
+                FileOutputStream fos = new FileOutputStream(file);
+                fos.write(foto.getContents());
+                fos.close();
+                imovel.setFoto(nomeFoto);
 
-                String fileName = foto.getFileName();
-                String nomeFoto = "imovel-" + ZonedDateTime.now().toInstant().getEpochSecond() + fileName.substring(fileName.indexOf('.'));
-                File file = new File(uploadPath + nomeFoto);
-                System.out.println(file.toString());
-                try {
-                    FileOutputStream fos = new FileOutputStream(file);
-                    fos.write(foto.getContents());
-                    fos.close();
-                    imovel.setFoto(nomeFoto);
+                FacesContext instance = FacesContext.getCurrentInstance();
+                instance.addMessage("mensagens", new FacesMessage(
+                        FacesMessage.SEVERITY_ERROR,
+                        fileName + " anexado com sucesso", null));
 
-                    FacesContext instance = FacesContext.getCurrentInstance();
-                    instance.addMessage("mensagens", new FacesMessage(
-                            FacesMessage.SEVERITY_ERROR,
-                            fileName + " anexado com sucesso", null));
-
-                } catch (FileNotFoundException ex) {
-                    ex.printStackTrace();
-                } catch (IOException ex) {
-                    ex.printStackTrace();
-                }
+            } catch (FileNotFoundException ex) {
+                ex.printStackTrace();
+            } catch (IOException ex) {
+                ex.printStackTrace();
             }
-        } catch (IOException e) {
-            e.printStackTrace();
         }
     }
 
@@ -223,4 +215,6 @@ public class CadastroImovel {
     public void setFoto(UploadedFile foto) {
         this.foto = foto;
     }
+
+
 }

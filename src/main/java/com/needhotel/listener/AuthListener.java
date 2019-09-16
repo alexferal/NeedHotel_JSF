@@ -12,7 +12,7 @@ public class AuthListener implements PhaseListener {
 
     @Override
     public void beforePhase(PhaseEvent event) {
-        System.out.println("Antes da RESTORE VIEW");
+
     }
 
     @Override

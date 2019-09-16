@@ -25,6 +25,7 @@ public class  BuscaBean {
         return "buscaImovel.xhtml";
     }
 
+
     public List<Imovel> getImovelList() {
         return imovelList;
     }

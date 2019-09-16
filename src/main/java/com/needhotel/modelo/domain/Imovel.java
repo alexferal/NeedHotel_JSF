@@ -19,12 +19,13 @@ public class Imovel {
     private String foto;
     private String descricao;
     private List<String> comodidades;
+    private String coordenadas;
 
     public Imovel() {
         id = String.valueOf(ZonedDateTime.now().toInstant().getEpochSecond());
     }
 
-    public Imovel(String proprietario, String nome, String rua, String bairro, String numero, String cep, String cidade, String estado, Float valor, boolean disponibilidade, String foto, String descricao, List<String> comodidades){
+    public Imovel(String proprietario, String nome, String rua, String bairro, String numero, String cep, String cidade, String estado, Float valor, boolean disponibilidade, String foto, String descricao, List<String> comodidades, String coordenadas){
         this.bairro = bairro;
         this.numero = numero;
         this.cep = cep;
@@ -35,6 +36,7 @@ public class Imovel {
         this.foto = foto;
         this.descricao = descricao;
         this.comodidades = comodidades;
+        this.coordenadas = coordenadas;
     }
 
     public String getId() {
@@ -149,6 +151,13 @@ public class Imovel {
         this.comodidades = comodidades;
     }
 
+    public String getCoordenadas() {
+        return coordenadas;
+    }
+
+    public void setCoordenadas(String coordenadas) {
+        this.coordenadas = coordenadas;
+    }
 
     @Override
     public String toString() {

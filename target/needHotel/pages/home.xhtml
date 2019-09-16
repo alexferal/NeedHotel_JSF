@@ -7,16 +7,28 @@
     <ui:define name="principal">
             <p:imageSwitch  effect="fade" id="fadeEffect">
                 <ui:repeat value="#{homeBean.images}" var="image" id="fadeEffectImages">
-                    <p:graphicImage style="width: 100%" name="images/#{image}" id="image" />
+                    <p:graphicImage style="width: 100%" name="assets/imagens/#{image}" id="image" />
                 </ui:repeat>
             </p:imageSwitch>
+
             <div class="row container" style="margin-top: 30px" >
                 <h:form StyleClass="col s6 white row ">
                     <p:inputText required="true" value="#{buscaBean.busca}" style="border-radius: 10px; margin-right: 10px" styleClass="col s10 white" id="search" type="text" placeholder="Cidades, Hoteis, ..." name="search" />
-                    <p:commandButton action="#{buscaBean.buscaImoveis}" style="width: 100px; height: 43px" icon="pi pi-search"></p:commandButton>
+                    <p:commandButton update="@all" action="#{buscaBean.buscaImoveis}" style="width: 100px; height: 43px" icon="pi pi-search"></p:commandButton>
                 </h:form>
             </div>
 
+        <p:carousel value="#{homeBean.imoveis}" headerText="Responsive" var="imovel" itemStyle="text-align:center" responsive="true">
+            <p:panelGrid columns="2" style="width:100%;margin:10px 0px" columnClasses="label,value" layout="grid" styleClass="ui-panelgrid-blank">
+                <f:facet name="header">
+                    <img src="../assets/imagens/#{imovel.foto}" style="width: 100%;"/>
+                </f:facet>
+
+                <p><h:outputText value="#{imovel.nome}" /></p>
+
+                <p><h:outputText value="Valor: #{imovel.valor}" /></p>
+            </p:panelGrid>
+        </p:carousel>
 
     </ui:define>
 </ui:composition>

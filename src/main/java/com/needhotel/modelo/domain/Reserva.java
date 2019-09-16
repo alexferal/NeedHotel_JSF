@@ -1,5 +1,7 @@
 package com.needhotel.modelo.domain;
 
+import org.bson.Document;
+
 import java.time.LocalDate;
 import java.time.ZonedDateTime;
 
@@ -71,5 +73,17 @@ public class Reserva {
 
     public void setPagamento(Pagamento pagamento) {
         this.pagamento = pagamento;
+    }
+
+    @Override
+    public String toString() {
+        return "Reserva{" +
+                "codigo='" + codigo + '\'' +
+                ", checkIn=" + checkIn +
+                ", checkOut=" + checkOut +
+                ", usuario='" + usuario + '\'' +
+                ", imovel='" + imovel + '\'' +
+                ", pagamento=" + pagamento.toString() +
+                '}';
     }
 }

@@ -21,8 +21,8 @@ public class ImovelDaoImpl implements ImovelDao {
 
     @Override
     public Boolean cadastrarImovel(Imovel imovel) {
-        String query = "INSERT INTO imovel(id, proprietario, nome, rua, bairro, numero, cep, cidade, estado, valor, disponibilidade, foto, descricao) " +
-                "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+        String query = "INSERT INTO imovel(id, proprietario, nome, rua, bairro, numero, cep, cidade, estado, valor, disponibilidade, foto, descricao, coordenadas) " +
+                "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
         try(Connection connection = factory.getConnection()){
             PreparedStatement statement = connection.prepareStatement(query);
             statement.setString(1, imovel.getId());
@@ -194,6 +194,7 @@ public class ImovelDaoImpl implements ImovelDao {
             imovel.setDisponibilidade(resultSet.getBoolean("disponibilidade"));
             imovel.setFoto(resultSet.getString("foto"));
             imovel.setDescricao(resultSet.getString("descricao"));
+            imovel.setCoordenadas(resultSet.getString("coordenadas"));
             imovel.setComodidades(getComodidades(imovel.getId()));
             return imovel;
         } catch (SQLException e) {
@@ -251,6 +252,7 @@ public class ImovelDaoImpl implements ImovelDao {
         statement.setBoolean(11, imovel.isDisponibilidade());
         statement.setString(12, imovel.getFoto());
         statement.setString(13, imovel.getDescricao());
+        statement.setString(14, imovel.getCoordenadas());
         return statement;
     }
 }

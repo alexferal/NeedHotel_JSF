@@ -27,6 +27,7 @@ CREATE TABLE imovel(
     disponibilidade BOOLEAN,
     foto VARCHAR(200),
     descricao VARCHAR(500),
+    coordenadas VARCHAR(100),
     CONSTRAINT id_pk PRIMARY KEY(id),
     CONSTRAINT proprietario_fk FOREIGN KEY(proprietario)
         REFERENCES usuario(cpf)

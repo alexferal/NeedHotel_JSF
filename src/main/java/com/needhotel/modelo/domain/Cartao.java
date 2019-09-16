@@ -1,5 +1,7 @@
 package com.needhotel.modelo.domain;
 
+import org.bson.Document;
+
 public class Cartao {
     private String numeroCartao;
     private String titular;
@@ -47,5 +49,15 @@ public class Cartao {
 
     public void setDataValidade(String dataValidade) {
         this.dataValidade = dataValidade;
+    }
+
+    @Override
+    public String toString() {
+        return "Cartao{" +
+                "numeroCartao='" + numeroCartao + '\'' +
+                ", titular='" + titular + '\'' +
+                ", cvv='" + cvv + '\'' +
+                ", dataValidade='" + dataValidade + '\'' +
+                '}';
     }
 }

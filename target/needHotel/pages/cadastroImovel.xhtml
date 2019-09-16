@@ -88,6 +88,11 @@
                                 <h:message for="diaria" styleClass="red-text" />
                             </div>
                         </div>
+                        <div class="input-field col s12">
+                            <h:outputLabel value="Coordenada" for="coordenada"></h:outputLabel>
+                            <p:inputText id="coordenada"   value="#{cadastroImovel.imovel.coordenadas}" placeholder="Ex.: ED. Rozana Soares" required="true" requiredMessage="#{msg['imovel.campoNomeObrigatorio']}"></p:inputText>
+                            <h:message for="coordenada" styleClass="red-text" />
+                        </div>
 
                         <div class="col s12 center">
                             <p:commandButton  value="#{msg['btn.voltar']}"/>

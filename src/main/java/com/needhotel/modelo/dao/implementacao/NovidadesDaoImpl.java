@@ -4,6 +4,7 @@ import com.google.gson.Gson;
 import com.needhotel.modelo.dao.interfaces.NovidadesDao;
 import com.needhotel.modelo.domain.Imovel;
 import redis.clients.jedis.Jedis;
+import redis.clients.jedis.params.SetParams;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -20,10 +21,11 @@ public class NovidadesDaoImpl implements NovidadesDao {
         gson = new Gson();
     }
 
+
+
     @Override
     public void salvarImovel(Imovel imovel) {
-        String imovelJson = gson.toJson(imovel);
-        jedis.setex(imovel.getId(), 120, imovelJson);
+        jedis.set(""+imovel.getId(),gson.toJson(imovel), SetParams.setParams().ex(3600));
     }
 
     @Override
@@ -34,7 +36,8 @@ public class NovidadesDaoImpl implements NovidadesDao {
 
         while (im.hasNext()){
             String imovelJson = im.next();
-            Imovel imovel = gson.fromJson(imovelJson, Imovel.class);
+            String json = jedis.get(""+imovelJson);
+            Imovel imovel = gson.fromJson(json, Imovel.class);
             imovelList.add(imovel);
         }
         return imovelList;

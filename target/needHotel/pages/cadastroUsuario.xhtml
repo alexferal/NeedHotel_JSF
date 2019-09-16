@@ -69,11 +69,11 @@
                     <h6>Conta</h6>
                     <div class="row container">
                         <div class="input-field col s12">
-                            <p:fileUpload fileUploadListener="#{cadastroImovel.anexar}" fileLimit="1" fileLimitMessage="Excedido Limite de arquivos"
-                                          cancelLabel="Cancelar" label="Foto do imovel" uploadLabel="Anexar"
+                            <p:fileUpload fileUploadListener="#{cadastroBean.anexar}" fileLimit="1" fileLimitMessage="Excedido Limite de arquivos"
+                                          cancelLabel="Cancelar" label="Foto do usuario" uploadLabel="Anexar"
 
                                           invalidFileMessage="Somente arquivos .jpg ou .png "
-                                          allowTypes="/(\.|\/)(jpe?g|png)$/" value="#{cadastroImovel.foto}"
+                                          allowTypes="/(\.|\/)(jpe?g|png)$/" value="#{cadastroBean.foto}"
                                           mode="advanced" skinSimple="true" />
                         </div>
                         <div class="input-field col s12">

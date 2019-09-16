@@ -8,7 +8,7 @@
         <div class="row container " style="margin-top: 30px" >
             <h:form StyleClass="col s6 white row">
                 <p:inputText required="true" value="#{buscaBean.busca}" style="border-radius: 10px; margin-right: 10px" styleClass="col s10 white" id="search" type="text" placeholder="Cidades, Hoteis, ..." name="search" />
-                <p:commandButton update="@all" action="#{buscaBean.buscaImoveis}" style="width: 100px; height: 43px" icon="pi pi-search"></p:commandButton>
+                <p:commandButton update="@all" action="#{buscaBean.buscaImoveis()}" style="width: 100px; height: 43px" icon="pi pi-search"></p:commandButton>
             </h:form>
         </div>
         <div class="divider"></div>
@@ -20,15 +20,13 @@
                     </div>
                     <div class="card-stacked">
                         <div class="card-content">
-                            <h5 id="nomeImovel">${imovel.nome}</h5>
-                            <p>${imovel.cidade}-${imovel.estado}</p>
-                            <p>Endereço: ${imovel.rua}</p>
-                            <p>Valor da Diária - R$:${imovel.valor}</p>
+                            <h5 id="nomeImovel"><h:outputText value="#{imovel.nome}"/></h5>
+                            <p><h:outputText value="#{imovel.cidade}"/>-<h:outputText value="#{imovel.estado}"/></p>
+                            <p>Endereço: <h:outputText value="#{imovel.rua}"/></p>
+                            <p>Valor da Diária - R$: <h:outputText value="#{imovel.valor}"/></p>
                         </div>
                         <div class="card-action">
-                            <h:form>
-                                <h:commandButton update="@form" action="#{imovelBean.escrever}" value="Ver mais"  class="waves-effect waves-light" style="float: right"/>
-                            </h:form>
+                            <a href="imovel.jsf?imovelid=#{imovel.id}">Ver mais</a>
                         </div>
                     </div>
                 </div>
